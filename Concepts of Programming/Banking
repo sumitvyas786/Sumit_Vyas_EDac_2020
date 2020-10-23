@@ -1,0 +1,104 @@
+package Banking;
+import java.util.Scanner;
+
+class Methods
+{
+    private int acc_no;
+    private String acc_name;
+    private String acc_type;
+    private static int bal=500;
+    Scanner s1=new Scanner(System.in);
+    
+    void info()
+    {
+        System.out.print("Enter Account No: ");
+        acc_no=s1.nextInt();
+        
+        System.out.print("Enter Account Holder's name: ");
+        s1.nextLine();
+        acc_name=s1.nextLine();
+        
+        System.out.println("Choose Account type: 1. Savings 2. Current: ");
+        int a=s1.nextInt();
+        if(a==1)
+            acc_type="Savings Account";
+        else if(a==2)
+            acc_type="Current Account";
+        else
+            System.out.println("Invalid choice!");
+        
+        System.out.println("Great! Your account is created.\n\nHello "+acc_name+"!");
+    }
+    
+    void info1()
+    {
+        System.out.println("\nAccount No: "+acc_no);
+        System.out.println("Account Holder's Name: "+acc_name);
+        System.out.println("Account Type: "+acc_type);
+        System.out.println("Account Balance: Rs."+bal);
+    }
+    
+    void withdrawl()
+    {
+        System.out.println("Enter Amount: ");
+        int x=s1.nextInt();
+        if(bal-x>=500)
+        {
+            bal=bal-x;
+            System.out.println("Transaction Successful.\nYour account balance is Rs."+bal);
+        }
+        else
+            System.out.println("Withdrawl not allowed. (Minimum balance Rs.500 required)");
+    }
+    
+    void deposit()
+    {
+        System.out.println("Enter Amount: ");
+        int a=s1.nextInt();
+        bal=bal+a;
+        System.out.println("Rs."+a+" is successfully deposited.\nYour account balance is Rs."+bal);  
+    }
+    
+    void balance()
+    {
+        System.out.println("Your account balance is: Rs."+bal);
+    }
+}
+    
+class Bank
+{
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Methods obj=new Methods();
+        System.out.println("Welcome to Knowledge Bank of CDAC Mumbai");
+        obj.info();
+        int x;
+        char a;
+        do{
+            System.out.println("Please enter your Choice:\n1. Money Withdrawl\n2. Money Deposit\n3. Balance Enquiry\n4. Account Information");
+            x=sc.nextInt();
+            switch(x)
+            {
+                case 1:
+                    obj.withdrawl();
+                    break;
+                case 2:
+                    obj.deposit();
+                    break;
+                case 3:
+                    obj.balance();
+                    break; 
+                case 4:
+                    obj.info1();
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+                    break;
+            }
+         System.out.println("\nPress 'Y' to CONTINUE or 'N' to EXIT.\n");
+         a=sc.next().charAt(0);;
+        }while(a!='N');
+        System.out.println("Thankyou for banking with us!");
+    }
+}
