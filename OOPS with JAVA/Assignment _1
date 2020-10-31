@@ -1,19 +1,20 @@
-package OOPS;
 import java.util.Scanner;
-//1.
-/**
+
+//1. Write a program to print Hello World. Compile and run it using command prompt.
+
 class Assignment1
 {
     public static void main(String args []){
         System.out.println("Hello World");
     }     
 }
-*/
 
 
 
-//2.
-/**
+
+//2. Write a program to declare a variable named rollNo of integer type. Assign it a value (let say 100) to it
+//   and print the following statement roll no = 100 .
+
 class Assignment1
 {
     public static void main(String args []){
@@ -21,11 +22,17 @@ class Assignment1
         System.out.println("roll no = "+rollNo);
     }     
 }
-*/
 
 
-//3.
-/**
+
+//3. Find the result of following expressions. You need to determine the primitive data type of the variable
+//   by looking carefully the given expression and initialize variables by any random value.
+//   A. y = x2 + 3x - 7 (print value of y) 
+//   B. y = x++ + ++x (print value of x and y) 
+//   C. z = x++ - --y - --x  +  x++ (print value of x ,y and z)
+//   D. z = x && y || !(x || y)  (print value of z) [ x, y, z are boolean variables ]
+
+
 class Assignment1
 {
     public static void main(String args []){
@@ -52,27 +59,30 @@ class Assignment1
         System.out.println("D. y = x && y || !(x || y)\n   z = "+g);
     }     
 }
-*/
+
+
+//4. Write a program that initializes 2 byte type of variables. Add the values of these variables and store in a byte type of variable.
+//   [Note: primitive down casting is required in this program ] .
 
 
 
+//5. Write a program that takes user’s name as command line argument and
+//   prints Welcome <entered user name>.
 
-
-//5.
-/**
 class Assignment1{
     public static void main(String args []){
         String a=args[0];
         System.out.println("Welcome  "+a);
     }     
 }
-*/
 
 
 
 
-//6.
-/**
+
+//6. Write a program that takes radius of a circle as input. Read the entered radius using Scanner class.
+//   Then calculate and print the area and circumference of the circle.
+
 class Assignment1
 {
     public static void main(String args []){
@@ -88,12 +98,15 @@ class Assignment1
         System.out.println("Area of circle = "+ar+"\nCircumference of circle = "+cir);
     }     
 }
-*/
 
 
 
-//7.
-/**
+
+//7. Write a program to calculate sum of 5 subject’s marks & find percentage.
+//   Take the obtained marks from user using Scanner class.
+//   Output should be in this format [ percentage marks = 99 % ].
+//   Use concatenation operator here.
+
 class Assignment1
 {
     public static void main(String args []){
@@ -111,13 +124,14 @@ class Assignment1
         System.out.println("Percentage marks = "+per+"%");
     }     
 }
-*/
 
 
 
 
-//8.
-/**
+
+//8. Write a program to find the simple interest.
+//   Take the principle amount, rate of interest and time from user using Scanner class.
+
 class Assignment1
 {
     public static void main(String args []){
@@ -136,14 +150,15 @@ class Assignment1
         System.out.println("SI = "+si+"%");
     }     
 }
-*/
 
 
 
 
 
-//9.
-/**
+
+//9. Write a program to read the days (eg. 670 days) as integer value using Scanner class.
+//   Now convert the entered days into complete years, months and days and print them.
+
 class Assignment1
 {
     public static void main(String args []){
@@ -161,13 +176,15 @@ class Assignment1
         System.out.println("Days: "+no+"\nMonths: "+mo+"\nYears: "+ye);
     }     
 }
-*/
 
 
 
 
-//10.
-/**
+
+//10. Write a program to convert temperature from Fahrenheit to Celsius.
+//    Take Fahrenheit as input using Scanner class.
+//    [ formula : C= 5*(f-32)/9 ]
+
 class Assignment1
 {
     public static void main(String args []){
@@ -182,14 +199,14 @@ class Assignment1
         System.out.println("Temperature in *C is: "+c);
     }     
 }
-*/
 
 
 
 
 
-//11.
-/**
+
+//11. Write a program to swap two numbers without using third variable.
+
 class Assignment1
 {
     public static void main(String args []){
@@ -207,15 +224,19 @@ class Assignment1
         System.out.println("After swapping:\nn1= "+n1+", n2= "+n2);
     }     
 }
-*/
 
 
 
 
 
 
-//12.
-/**
+
+//12. In a company an employee is paid as under: If his basic salary is less than Rs. 10000,
+//   then HRA = 10% of basic salary and DA = 90% of basic salary. If his salary is either equal to or
+//   above Rs. 10000, then HRA = Rs. 2000 and DA = 98% of basic salary.
+//   If the employee's salary is input by the user write a program to find his gross salary.
+//   [ formula : GS= Basic + DA + HRA ]
+
 class Assignment1
 {
     public static void main(String args []){
@@ -239,7 +260,6 @@ class Assignment1
         System.out.println("Gross Salery= "+gsal);
     }     
 }
-*/
 
 
 
@@ -247,8 +267,9 @@ class Assignment1
 
 
 
-//13.1.
-/**
+
+//13.1. Program to find greatest in 3 numbers. [using if else statement].
+
 class Assignment1
 {
     public static void main(String args [])
@@ -272,7 +293,6 @@ class Assignment1
         System.out.println("Greatest no. is: "+gr);
     }     
 }
-*/
 
 
 
@@ -280,8 +300,9 @@ class Assignment1
 
 
 
-//13.2.
-/**
+
+//13.2.	Program to find greatest in 3 numbers. [using ternary operator (logical operator)] 
+
 class Assignment1
 {
     public static void main(String args [])
@@ -299,7 +320,6 @@ class Assignment1
         System.out.println("Greatest no. is: "+lb);
     }     
 }
-*/
 
 
 
@@ -308,8 +328,9 @@ class Assignment1
 
 
 
-//14.
-/**
+
+//14. Program to check that entered year is a leap year or not.
+
 class Assignment1
 {
     public static void main(String args [])
@@ -329,7 +350,6 @@ class Assignment1
             System.out.println(y+" is a Normal Year.");
     }     
 }
-*/
 
 
 
@@ -337,8 +357,10 @@ class Assignment1
 
 
 
-//14.
-/**
+
+//15. Accept person’s gender (character m for male and f for female), age (integer),
+//    as input and then check whether person is eligible for marriage or not.
+
 class Assignment1
 {
     public static void main(String args [])
@@ -357,4 +379,3 @@ class Assignment1
             System.out.println("You are NOT ELIGIBLE for marriage.");
     }     
 }
-*/
