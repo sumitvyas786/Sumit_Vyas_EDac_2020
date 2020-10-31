@@ -1,4 +1,3 @@
-package OOPS;
 import java.util.Scanner;
 
 //1. Write a program to merge two arrays of integers by reading one number at a time from
