@@ -1,8 +1,7 @@
-package OOPS;
 import java.io.*;
 import java.util.*;
 
-/**
+
 //1) WAP to define a class Student with attributes rollno, name ,
 //   marks accept data for 2 objects and display them.
 
@@ -45,10 +44,11 @@ public class Assignment4
         s2.ShowDetails();
     }
 }
-*/
 
 
-/**
+
+
+
 //2) WAP to define a class Book with attributes id, name, price
 //   accept data for 5 objects display book with highest price.
 
@@ -98,12 +98,12 @@ class Assignment4
             System.out.println("\nRs."+b5.price+" of "+b5.name+" book with ID: "+b5.id+" is greatest.");
     }
 }
-*/
 
 
 
 
-/**
+
+
 //3) WAP to define a class Bank accept customerid, name, balance
 //   write method to perform deposit, checkbal, withdraw keep min. balance 1000.
 
@@ -171,11 +171,11 @@ class Assignment4
         obj.withdraw();        
     }
 }
-*/
 
 
 
-/**
+
+
 //4) WAP to define a class Employee with attributes id, name, designation accept data
 //    for 5 objects and display employee details whose designation is Manager.
 
@@ -227,11 +227,11 @@ class Assignment4
             System.out.println("\n"+e5.name+" with ID: "+e5.id+" is Manager");
     }
 }
-*/
 
 
 
-/**
+
+
 //5) WAP to define Class Simpleinterest with attributes principal amount, 
 //    rate of interest static ,number of years calculate SI and display it. 
 
@@ -270,11 +270,11 @@ class Assignment4
         System.out.println("SI: Rs."+s.CalculateSI());
      }
 }
-*/
 
 
 
-/**
+
+
 //6) Write a program Complex number to add the real and
 //   imaginary part for 2 complex numbers.
 
@@ -326,4 +326,3 @@ class Assignment4
         //System.out.println("\nSum: "+s1.real+"+"+s1.imag+"i  +  "+s2.real+"+"+s2.imag+"i  =  "+a+"+"+b+"i");
      }
 }
-*/
