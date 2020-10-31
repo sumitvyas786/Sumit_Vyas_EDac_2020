@@ -1,0 +1,329 @@
+package OOPS;
+import java.io.*;
+import java.util.*;
+
+/**
+//1) WAP to define a class Student with attributes rollno, name ,
+//   marks accept data for 2 objects and display them.
+
+class Student
+{
+    int rollno;
+    String name;
+    int marks;
+    
+    void GetDetails()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Roll No: ");
+        rollno=sc.nextInt();
+        sc.nextLine();
+        System.out.print("Name: ");
+        this.name=sc.nextLine();
+        System.out.print("Marks: ");
+        this.marks=sc.nextInt();
+    }
+    
+    void ShowDetails()
+    {
+        System.out.println("\nRoll No: "+rollno);
+        System.out.println("Name: "+name);
+        System.out.println("Marks: "+marks);
+    }
+}
+
+public class Assignment4
+{
+    public static void main(String[] args)
+    {
+        Student s1=new Student();
+        Student s2=new Student();
+        
+        s1.GetDetails();
+        s2.GetDetails();
+        s1.ShowDetails();
+        s2.ShowDetails();
+    }
+}
+*/
+
+
+/**
+//2) WAP to define a class Book with attributes id, name, price
+//   accept data for 5 objects display book with highest price.
+
+class Book
+{
+    int id;
+    String name;
+    int price;
+    Scanner sc=new Scanner(System.in);
+    
+    Book()
+    {
+        System.out.print("Enter ID: ");
+        id=sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Book Name: ");
+        name=sc.nextLine();
+        System.out.print("Enter Price: ");
+        price=sc.nextInt();
+    }
+}
+    
+class Assignment4
+{
+    public static void main(String []args)
+    {
+        //Scanner sc=new Scanner(System.in);
+        Book b1=new Book();
+        Book b2=new Book();
+        Book b3=new Book();
+        Book b4=new Book();
+        Book b5=new Book();
+        
+        if(b1.price>b2.price && b1.price>b3.price && b1.price>b4.price && b1.price>b5.price)
+            System.out.println("\nRs."+b1.price+" of "+b1.name+" book with ID: "+b1.id+" is greatest.");
+        
+        else if(b2.price>b3.price && b2.price>b4.price && b2.price>b5.price)
+            System.out.println("\nRs."+b2.price+" of "+b2.name+" book with ID: "+b2.id+" is greatest.");
+        
+        else if(b3.price>b4.price && b3.price>b5.price)
+            System.out.println("\nRs."+b3.price+" of "+b3.name+" book with ID: "+b3.id+" is greatest.");
+        
+        else if(b4.price>b5.price)
+            System.out.println("\nRs."+b4.price+" of "+b4.name+" book with ID: "+b4.id+" is greatest.");
+        
+        else
+            System.out.println("\nRs."+b5.price+" of "+b5.name+" book with ID: "+b5.id+" is greatest.");
+    }
+}
+*/
+
+
+
+
+/**
+//3) WAP to define a class Bank accept customerid, name, balance
+//   write method to perform deposit, checkbal, withdraw keep min. balance 1000.
+
+class Bank
+{
+    private int customerid;
+    private String name;
+    private static int balance;
+    Scanner s1=new Scanner(System.in);
+    
+    Bank()
+    {
+        System.out.print("Enter Customer ID: ");
+        customerid=s1.nextInt();
+        
+        System.out.print("Enter Name: ");
+        s1.nextLine();
+        name=s1.nextLine();
+        }
+    
+    void deposit()
+    {
+        System.out.print("Enter Amount to Deposit: ");
+        int a=s1.nextInt();
+        
+        
+        if(a<1000)
+        {
+            System.out.println("Minimum balance should be Rs.1000");
+        }
+        else
+        {
+            balance=balance+a;
+            System.out.println("Rs."+a+" is successfully deposited");
+        }
+    }
+    
+    void checkbal()
+    {
+        System.out.println("Your account balance is: Rs."+balance);
+    }
+    
+    void withdraw()
+    {
+        System.out.print("Enter Amount to Debit: ");
+        int x=s1.nextInt();
+        if(balance-x>=1000)
+        {
+            balance=balance-x;
+            System.out.println("Transaction Successful & balance is Rs."+balance);
+        }
+        else
+            System.out.println("Withdrawl not allowed. (Minimum balance Rs.1000 required)");
+    }
+}
+    
+class Assignment4
+{
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Bank obj=new Bank();
+        obj.deposit();
+        obj.checkbal();
+        obj.withdraw();        
+    }
+}
+*/
+
+
+
+/**
+//4) WAP to define a class Employee with attributes id, name, designation accept data
+//    for 5 objects and display employee details whose designation is Manager.
+
+class Employee
+{
+    int id;
+    String name;
+    String Desig;
+    Scanner sc=new Scanner(System.in);
+    
+    Employee()
+    {
+        System.out.print("Enter ID: ");
+        id=sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Name: ");
+        name=sc.nextLine();
+        System.out.print("Enter Designation: ");
+        Desig=sc.nextLine();
+    }
+}
+    
+class Assignment4
+{
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Employee e1=new Employee();
+        Employee e2=new Employee();
+        Employee e3=new Employee();
+        Employee e4=new Employee();
+        Employee e5=new Employee();
+        
+        String s="Manager";
+        
+        if(e1.Desig.equals(s))
+            System.out.println("\n"+e1.name+" with ID: "+e1.id+" is Manager");
+        
+        else if(e2.Desig.equals(s))
+            System.out.println("\n"+e2.name+" with ID: "+e2.id+" is Manager");
+        
+        else if(e3.Desig.equals(s))
+            System.out.println("\n"+e3.name+" with ID: "+e3.id+" is Manager");
+        
+        else if(e4.Desig.equals(s))
+            System.out.println("\n"+e4.name+" with ID: "+e4.id+" is Manager");
+        
+        else
+            System.out.println("\n"+e5.name+" with ID: "+e5.id+" is Manager");
+    }
+}
+*/
+
+
+
+/**
+//5) WAP to define Class Simpleinterest with attributes principal amount, 
+//    rate of interest static ,number of years calculate SI and display it. 
+
+class Simpleinterest
+{
+    int princ;
+    int rate;
+    int years;
+    Scanner sc=new Scanner(System.in);
+    
+    Simpleinterest()
+    {
+        System.out.print("Enter Principal: ");
+        princ=sc.nextInt();
+        System.out.print("Enter Rate: ");
+        rate=sc.nextInt();
+        System.out.print("Enter Years: ");
+        years=sc.nextInt();
+    }
+    
+    float CalculateSI()
+    {
+        float si=(princ*rate*years)/100.0f;
+        return si;
+    }
+    
+}
+    
+class Assignment4
+{
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Simpleinterest s=new Simpleinterest();
+        
+        System.out.println("SI: Rs."+s.CalculateSI());
+     }
+}
+*/
+
+
+
+/**
+//6) Write a program Complex number to add the real and
+//   imaginary part for 2 complex numbers.
+
+class Complex
+{
+    int real;
+    int imag;
+    Scanner sc=new Scanner(System.in);
+    
+    Complex()
+    {
+        System.out.print("Enter Real part: ");
+        real=sc.nextInt();
+        System.out.print("Enter Imaginary part: ");
+        imag=sc.nextInt();
+    }
+    
+    int CalcReal(Complex x)
+    {
+        int sum=x.real+real;
+        return sum;
+    }
+    
+    int CalcImag(Complex x)
+    {
+        int sum=x.imag+imag;
+        return sum;
+    }
+    
+    
+}
+    
+class Assignment4
+{
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Complex s1=new Complex();
+        Complex s2=new Complex();
+        
+        //int a=s1.real+s2.real;
+        //int b=s1.imag+s2.imag;
+        
+        int x=s1.CalcReal(s2);
+        int y=s1.CalcImag(s2);
+        
+        System.out.println("\nSum: "+s1.real+"+"+s1.imag+"i  +  "+s2.real+"+"+s2.imag+"i  =  "+x+"+"+y+"i");
+        
+        //System.out.println("\nSum: "+s1.real+"+"+s1.imag+"i  +  "+s2.real+"+"+s2.imag+"i  =  "+a+"+"+b+"i");
+     }
+}
+*/
