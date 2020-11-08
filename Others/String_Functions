@@ -1,0 +1,28 @@
+  String Functions	                              Description
+	String.valueOf(arr)	                            Convert the entire array into a string
+	String1.compareTo(String2)	                    Compares strings  Lexicographically
+	S.substring(startIndex, endIndex)	              Converts a string s into substrings (length  startIndex to endIndex)
+	String.toUpperCase( )	                          Converts a string to Uppercase
+	String.toLowerCase( )                         	Converts a string to Lowercase
+	S1.equals(S2)	                                  Compares values in String & references in primitives/userdefined
+	String1 == String2	                            Compares only references.
+	s.hashCode( )	                                  Gives the hashcode of an object
+	s.toString( )	                                  Gives Classname@hashcode of an object 
+	Float.valueOf(s)                         	      Returns Float contents of String object
+	Float.parseFloat(s)	                            Converts string contents into Wrapper Float
+	s.contains(s1)	                                Returns boolean & checks string s1 present in string s
+	s.split("char")	                                Splits string into Array of substrings on arrival of given symbol/character
+	boolean startsWith(String prefix)	              Checks if a string starts with the string represented by prefix.
+	char[] toCharArray( )	                          Converts this string to a new character array
+	boolean equalsIgnoreCase(String s)	            Used to compare two strings, ignoring the case
+	char charAt(int index)	                        Returns character at a particular index.
+	void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)	             Copy set of characters of the invoking string into the specified character array.
+	boolean endsWith(String suffix)	                Checks whether the String ends with a specified suffix.
+	S1.concat(s2)	                                  Concatenates the string S2 at the end of the current string S1.
+	S.replace(char old, char new)	                  Replaces all the occurrences of a old character with new character
+	S.replaceFirst(String old,  String new )	      Replaces the first substring that fits the specified regular expression with the replacement String.
+	replaceAll(String old,  String new )	          Replaces all the substring that fits the specified regular expression with the replacement String.
+	indexOf(int ch/String str)	                    Returns the index of the first occurrence of Character ch/String str in a given String.
+	lastIndexOf( )	                                Returns the index of the last occurrence of the character or string.
+	Boolean isEmpty()	                              Checks whether a String is empty or not.
+	String join(CharSequence delimiter, CharSequence... elements)	       String.join("-", "This", "is", "a", "String");
