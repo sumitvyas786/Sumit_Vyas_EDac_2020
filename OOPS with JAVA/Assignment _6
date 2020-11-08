@@ -211,3 +211,352 @@ class Assignment6
         System.out.println("Double g*h: "+obj.multiply(a,b));
     }
 }
+
+
+
+
+
+//5. Create a class Employee with three data members (empNo, salary and totalSalary) and following features:
+//    a. Only parameterized constructor. [Do not overload the constructor]
+//    b. totalSalary always represents salary total of all the employees created.
+//    c. empNo should be auto incremented.
+//    d. display total employees and totalSalary using a method.
+//    Create another class EmployeeDemo (main class) that creates some Employee objects and
+//    calls Employee method to display no. of employees and total of their salaries.
+
+
+class Employee
+{
+    static int empNo=0;
+    int salery;
+    static int totalSalery=0;
+    
+    Employee(int sal)
+    {
+        salery=sal;
+        empNo++;
+        totalSalery=totalSalery+salery;
+    }
+    
+    static void display()
+    {
+        System.out.println("\nTotal Employees: "+empNo+"\nTotal Salery of all Employees: "+totalSalery);
+    }
+    
+}
+
+class Assignment6
+{
+    public static void main(String [] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        
+        System.out.print("Enter total Entries: ");
+        int n=sc.nextInt();
+        
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("Enter Salery of Employee "+(i+1)+": ");
+            int s=sc.nextInt();
+            Employee emp=new Employee(s);
+        }
+        
+        Employee.display();
+    }
+}
+
+
+
+
+//6. Create class Product with three data members (pid, price, quantity) and parameterized constructor that takes values for all three data members.  
+//   Create a main method in different class (say ProductDemo) and perform following task:
+//   a. Accept information for five Product objects from user and store objects in an array
+//   b. Find pid of product with highest price. 
+//   c. Create a static method (with array of product’s object as argument) in Product class to calculate and return total amount spent on all products.
+//  (amount spent on single product = price of product * quantity of product )
+
+class Product{
+	
+	int pid;
+	double price;
+	int quantity;
+	
+	public Product(int pid, double price, int quantity) {
+		this.pid = pid;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	static void productWithHighestPrice(Product[] p) {
+		double max=p[0].price;
+		for (int i = 0; i < p.length; i++) {
+			if(p[i].price>max)max=p[i].price;
+		}
+		System.out.println();
+		System.out.println("Maximum price is := "+max);
+		
+		System.out.println();
+		for (int i = 0; i < p.length; i++) {
+			if(p[i].price==max) {
+				System.out.println("The Pid of Highest price is := "+p[i].pid);
+			}
+		}
+		
+	}
+	
+	
+	static double[] moneySpentOn(Product[] arr) {
+		
+		double[] sum =new double[arr.length];
+		
+		for (int i = 0; i < arr.length; i++) {
+			sum[i]=(arr[i].price * arr[i].quantity);
+		}
+		return sum;
+		
+	}
+
+	
+}
+public class ProductOfStore {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		Product[] arr=new Product[5];
+		
+		for (int i = 0; i < arr.length; i++) {
+		
+			System.out.print("Enter Product Id := ");
+			int pid=sc.nextInt();
+			System.out.print("Enter the Price := ");
+			double price=sc.nextDouble();
+			System.out.print("Enter the Quantities :=");
+			int quantity=sc.nextInt();
+			
+			arr[i]=new Product(pid,price,quantity);
+		}
+		
+		Product.productWithHighestPrice(arr);
+		double[] spent=Product.moneySpentOn(arr);
+	System.out.println();
+		for (int i = 0; i < spent.length; i++) {
+			System.out.println(arr[i]+"  spent on each item := "+spent[i]);
+		}
+	}
+}
+
+
+
+
+
+//7. Create a class OneBHK with instance variables roomArea, hallArea and price. Then create default constructor that initializes
+//   instance variables with some values and a parameterized constructor that takes values for all instance variables and stores them in instance variables.
+//   Now create a method named show()  to print OneBHK’s instance variable values.
+//   Create another class TwoBHK which has (inherits) all the properties and behaviors of OneBHK and a new instance variable room2Area.
+//   Then create default constructor to initialize all 4 instance variables and a parameterized constructor to take the values for initialization of all
+//   instance variables. Override show() method to print all data member information.
+//   Write main method in another class (Say Demo) and store three TwoBHK flat’s information and print information using show method. Also print total amount of all flats. 
+
+class OneBHK{
+	int roomArea;
+	int hallArea;
+	int price;
+	
+	public OneBHK() {
+		this.roomArea=10;
+		this.hallArea=10;
+		this.price=1000;
+	}
+	
+	public OneBHK(int roomArea, int hallArea, int price) {
+	
+		this.roomArea = roomArea;
+		this.hallArea = hallArea;
+		this.price = price;
+	}
+	
+	void show() {
+		System.out.println("Room Area := "+this.roomArea+"  Hall Area := "+this.hallArea+"  Price := "+this.price);
+	}
+	
+}
+
+class TwoBHK extends OneBHK{
+	
+	int room2Area;
+	public TwoBHK(){
+		super();
+		this.room2Area=10;
+	}
+	public TwoBHK(int roomArea, int room2Area,int hallArea,int price) {
+		super(roomArea,hallArea,price);
+		this.room2Area = room2Area;
+	}
+	
+	void show() {
+		System.out.println("Room  1 Area := "+this.roomArea+"  Room 2 Area := "+this.room2Area+"  Hall Area := "+this.hallArea+"  Price := "+this.price);
+	}
+	
+	 static void totalAmountOfFlates(TwoBHK ob1,TwoBHK ob2,TwoBHK ob3) {
+		int total=ob1.price+ob2.price+ob3.price	;
+		System.out.println("Total Price is := "+total);
+				}
+}
+
+public class ConstructionPropertiesPVTLTD {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TwoBHK ob1=new TwoBHK(100,100,100,1000);
+		TwoBHK ob2=new TwoBHK(200,200,200,2000);
+		TwoBHK ob3=new TwoBHK(300,300,300,3000);
+		
+		ob1.show();
+		ob2.show();
+		ob3.show();
+		
+		TwoBHK.totalAmountOfFlates(ob1, ob2, ob3);
+	}
+}
+
+//8.	Create three classes
+//   	Faculty with two data members facultyId and salary and two methods, one intput() method for accepting facultyId as input and another printSalary() to print salary.
+//  	FullTimeFaculty that inherits class Faculty with two data members’ basicSalary and allowance. Override input() method in this class that calls super class inut() method and accepts basicSalary and allowance as input. Salary should not be accepted as input but should be calculated using formula (basicSalary + allowance)
+//  	PartTimeFaculty that inherits class Faculty with two data members’ workingHours, ratePerHour. Override input() method in this class that calls super class inut() method and accepts workingHours and ratePerHour as input. Salary should not be accepted as input but should be calculated using formula ( workingHour * ratePerHour )
+
+
+class Faculty{
+	int facultyId;
+	double salary;
+	void input(int facultyId) {
+		this.facultyId=facultyId;
+	}
+	
+	void printSalary() {
+		System.out.println("Salary is  := "+this.salary);
+	}
+}
+
+class FullTimeFaculty extends Faculty{
+	int basicSalary;
+	int allowance;
+	void input(int facultyId) {
+		this.facultyId=facultyId;
+	}
+	void input(int facultyId,int basicSalary,int allowance)
+    {
+        super.input(facultyId);
+        this.basicSalary=basicSalary;
+        this.allowance=allowance;
+        super.salary=basicSalary + allowance;
+    }
+}
+
+class PartTimeFaculty extends Faculty{
+	int workingHours;
+	int ratePerHour;
+	void input(int facultyId) {
+		this.facultyId=facultyId;
+	}
+	void input(int id,int workingHours,int ratePerHour)
+    {
+        super.input(facultyId);
+        this.workingHours=workingHours;
+        this.ratePerHour=ratePerHour;
+        super.salary=this.workingHours * this.ratePerHour;
+    }
+	
+}
+
+
+public class CollegeFacultyData {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("For Full Time Faculty");
+		System.out.print("Enter Faculty id := ");
+		int facultyId=sc.nextInt();
+		System.out.print("Enter Faculty basic Salary := ");
+		int basicSalary=sc.nextInt();
+		System.out.print("Enter Faculty Allowance := ");
+		int allowance=sc.nextInt();
+		
+		FullTimeFaculty ob=new FullTimeFaculty();
+		ob.input(facultyId, basicSalary, allowance);
+		
+		
+		System.out.println("For Part Time Faculty");
+		System.out.print("Enter Faculty id := ");
+		int facultyId1=sc.nextInt();
+		System.out.print("Enter Faculty Working Hours := ");
+		int workingHours=sc.nextInt();
+		System.out.print("Enter Faculty ratePerHour := ");
+		int ratePerHour=sc.nextInt();
+		
+		PartTimeFaculty ob2=new PartTimeFaculty();
+		ob2.input(facultyId1, workingHours, ratePerHour);
+		
+		ob.printSalary();
+		ob2.printSalary();
+	}
+}
+
+
+
+//9. Create an Abstract class Processor with int member variable data  and method showData to display data value. Create abstract method process() to define processing of member data.
+//   Create a class  Factorial using abstract class Processor  to calculate and print factorial of a number by overriding the process method. 
+//   b. Create a class Circle using abstract class Processor to calculate and print area of a circle by overriding the process method.
+//   Ask user to enter choice (factorial or circle area).  Also ask data to work upon. Use Processor class reference to achieve this mechanism.
+
+abstract class Processor{
+	double data;
+	void showData() {
+		System.out.println("Data := "+this.data);
+	}
+	abstract void process(int n); 
+}
+class  Factorial extends Processor{
+	void process(int n) {
+		int fact=1;
+		for(int i=1;i<=n;i++) {
+			fact=fact*i;
+		}
+		data=fact;
+	}
+}
+
+
+class Circle extends Processor{
+	void process(int n) {
+	final float PI=3.14f;	
+	double area=PI*n*n;
+	data=area;
+	}
+} 
+public class ComputerProcessor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("1.Factroial of number \n 2.Area of Circle ");
+		int choice=sc.nextInt();
+		switch(choice) {
+			case 1:Factorial ob=new Factorial();
+					System.out.println("Enter the number whose Factorial is to be find := ");
+						int n=sc.nextInt();
+						ob.process(n);
+						ob.showData();
+						break;
+			case 2:	Circle ob1=new Circle();
+					System.out.println("Enter the Circle whose Area is to be find := ");
+							int r=sc.nextInt();
+								ob1.process(r);
+								ob1.showData();
+								break;
+			default:System.out.println("Wrong Choice");					
+		}
+	}
+}
