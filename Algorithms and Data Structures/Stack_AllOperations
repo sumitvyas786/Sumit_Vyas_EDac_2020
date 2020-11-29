@@ -1,0 +1,197 @@
+package ADS_Assignments;
+import java.util.*;
+
+/*
+class Stack
+{
+    int top;
+    int capacity;
+    int arr[];
+    
+    Stack(int capacity)
+    {
+        this.capacity=capacity;
+        arr=new int[capacity];
+    }
+    
+    void push(int item)
+    {
+        if(IsFull())
+            System.out.println("\nStack Overflow");
+        
+        else if(IsEmpty())
+        {
+            arr[top++]=item;
+            System.out.println("\n"+item+" Pushed into stack");
+        }
+        
+        else
+        {
+            arr[top++]=item;
+            System.out.println("\n"+item+" Pushed & Stack is full");
+        }
+    }
+    
+    Boolean IsFull()
+    {
+        if(top>capacity)
+            return true;
+        else
+            return false;
+    }
+    
+    Boolean IsEmpty()
+    {
+        if(top>=0 && top<capacity)
+            return true;
+        else
+            return false;
+    }
+    
+    void pop()
+    {
+        if(top==0)
+            System.out.println("Stack is Underflow");
+        
+        else
+        {
+            top--;
+            System.out.println("\n"+arr[top]+" Popped out of Stack");
+        }
+    }
+    
+    void peek()
+    {
+        System.out.println("\nElement at top: "+arr[top]);
+    }
+    
+    void printStack()
+    {
+        System.out.println();
+        for(int i=0;i<top;i++)
+        System.out.println("Element "+(i+1)+": "+arr[i]);
+    }
+
+    public static void main(String args[])
+    {
+        Stack obj=new Stack(3);
+        obj.push(15);
+        obj.push(10);
+        obj.push(5);
+        obj.printStack();
+        obj.pop();
+        obj.pop();
+        obj.peek();
+        obj.printStack();
+    }
+}
+*/
+
+
+
+
+class Stack
+{
+    int top=-1;
+    int capacity;
+    int arr[];
+    
+    Stack(int capacity)
+    {
+        this.capacity=capacity;
+        arr=new int[capacity];
+    }
+    
+    void push(int item)
+    {
+        if(IsFull())
+            System.out.println("\nStack Overflow");
+        
+        else if(IsEmpty())
+        {
+            arr[++top]=item;
+            System.out.println("\n"+item+" Pushed into stack");
+        }
+    }
+    
+    Boolean IsFull()
+    {
+        if(top>capacity)
+            return true;
+        else
+            return false;
+    }
+    
+    Boolean IsEmpty()
+    {
+        if(top<capacity)
+            return true;
+        else
+            return false;
+    }
+    
+    void pop()
+    {
+        if(top<0)
+            System.out.println("Stack is Underflow");
+        
+        else
+        {
+            System.out.println("\n"+arr[top--]+" Popped out of Stack");
+        }
+    }
+    
+    void peek()
+    {
+        System.out.println("\nElement at top: "+arr[top]);
+    }
+    
+    void printStack()
+    {
+        System.out.println();
+        for(int i=0;i<=top;i++)
+        System.out.println("Element "+(i+1)+": "+arr[i]);
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int option=1,item;
+        
+        System.out.print("Enter Stack size: ");
+        int size=sc.nextInt();
+        Stack obj=new Stack(size);
+        
+        while(option!=0)
+        {
+            System.out.println("\nSelection Operation: \n1. Push element.\n2. Pop element.\n3. Peek top element.\n4. Show stack elements list.\n0. EXIT");
+            option=sc.nextInt();
+            switch(option)
+            {
+                case 1:
+                    System.out.print("\nEnter item to push: ");
+                    item=sc.nextInt();
+                    obj.push(item);
+                    break;
+                    
+                case 2:
+                    obj.pop();;
+                    break;
+                    
+                case 3:
+                    obj.peek();
+                    break;
+                    
+                case 4:
+                    obj.printStack();
+                    break;
+                    
+                case 0:
+                    break;
+                    
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        }
+    }
+}
