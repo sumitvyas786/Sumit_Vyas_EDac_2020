@@ -1,0 +1,143 @@
+
+
+class TreeBST
+{
+    class TreeNode
+    {
+        int data;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int data)
+        {
+            this.data=data;
+            this.left=this.right=null;
+        }    
+    }
+
+    TreeNode root;
+    
+    TreeBST()
+    {
+        root=null;
+    }
+
+    void insert(int data)
+    {
+        root= insertRec(root, data);
+    }
+    
+    
+    
+    
+    
+    
+    
+    TreeNode insertRec(TreeNode root, int data)
+    {
+        if(root==null)
+        {
+            root=new TreeNode(data);
+            return root;
+        }
+        
+        if(data<root.data)
+            root.left=insertRec(root.left, data);
+        else if(data>=root.data)
+            root.right=insertRec(root.right, data);
+            
+        return root;
+    }
+    
+    
+    
+    
+    
+    void delete(int data)
+    {
+        root=deleteRec(root, data);
+    }
+    
+    
+    TreeNode deleteRec(TreeNode root, int data)
+    {
+        if(root==null)
+            return root;
+        
+        if(data<root.data)
+            root.left=deleteRec(root.left, data);
+        
+        else if(data>=root.data)
+            root.right=deleteRec(root.right, data);
+        
+        else
+        {
+            if(root.left==null)
+                return root.right;
+            else if(root.right==null)
+                return root.left;
+            
+            root.data=minValue(root.right);
+            root.right=deleteRec(root.right, root.data);
+        }
+        return root;
+    }
+        
+    
+    int minValue(TreeNode root)
+    {
+        int minv=root.data;
+        while(root.left != null)
+        {
+            minv=root.left.data;
+            root=root.left;
+        }
+        return minv;
+    }
+    
+    
+    
+    
+    
+    
+    void printInorder()
+    {
+        inorder(root);
+    }
+    
+    void inorder(TreeNode root)
+    {
+        if(root!=null)
+        {
+            inorder(root.left);
+            System.out.print(root.data+" ");
+            inorder(root.right);
+        }
+    }
+    
+    public static void main(String args[])
+    {
+        TreeBST obj=new TreeBST();
+        obj.insert(50);
+        obj.insert(30);
+        obj.insert(20);
+        obj.insert(40);
+        obj.insert(70);
+        obj.insert(60);
+        obj.insert(80);
+        
+        obj.printInorder();
+        
+        System.out.println("\n\nDelete 20");
+        obj.delete(20);
+        obj.printInorder();
+ 
+        System.out.println("\n\nDelete 30");
+        obj.delete(30);
+        obj.printInorder();
+ 
+        System.out.println("\n\nDelete 50");
+        obj.delete(50);
+        obj.printInorder();
+    }
+}
