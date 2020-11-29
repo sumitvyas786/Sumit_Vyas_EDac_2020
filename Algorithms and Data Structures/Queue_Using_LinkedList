@@ -1,0 +1,84 @@
+class Node
+{
+    int data;
+    Node next;
+    
+    Node(int a)
+    {
+        data=a;
+        next=null;
+    }
+}
+
+ class Functions
+{
+    Node head;
+    
+    void insertFirst(int data)
+    {
+        Node obj=new Node(data);
+            obj.next=head;
+            head=obj;
+    }
+       
+    void display()
+    {
+        Node temp=head;
+        while(temp!=null)
+        {
+            System.out.println(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    
+    void deleteLast()
+    {
+        Node temp=head;
+        while(temp.next.next!=null)
+        {
+            temp=temp.next;
+        }
+        temp.next=null;
+    }
+}
+
+
+
+public class Queue_Using_LinkedList
+{
+    Functions ob=new Functions();
+
+    void enqueue(int data)
+    {
+        ob.insertFirst(data);
+    }
+
+    void dequeue()
+    {
+        ob.deleteLast();
+    }
+
+    void display()
+    {
+        ob.display();
+    }
+    
+    
+    public static void main(String[] args)
+    {
+        Queue_Using_LinkedList obj=new Queue_Using_LinkedList();
+        obj.enqueue(10);
+        obj.enqueue(20);
+        obj.enqueue(30);
+
+        obj.display();
+
+        System.out.println();
+        obj.dequeue();
+        obj.display();
+        System.out.println();
+        
+        obj.dequeue();
+        obj.display();
+    }
+}
