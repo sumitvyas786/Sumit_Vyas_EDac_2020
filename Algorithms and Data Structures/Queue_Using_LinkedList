@@ -1,3 +1,4 @@
+
 class Node
 {
     int data;
@@ -26,7 +27,7 @@ class Node
         Node temp=head;
         while(temp!=null)
         {
-            System.out.println(temp.data+" ");
+            System.out.print(temp.data+" ");
             temp=temp.next;
         }
     }
@@ -72,13 +73,14 @@ public class Queue_Using_LinkedList
         obj.enqueue(30);
 
         obj.display();
-
         System.out.println();
+        
         obj.dequeue();
         obj.display();
         System.out.println();
         
         obj.dequeue();
         obj.display();
+        System.out.println();
     }
 }
