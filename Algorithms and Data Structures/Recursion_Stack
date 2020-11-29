@@ -1,0 +1,114 @@
+
+
+import java.util.*;
+
+/*
+//Using recursion:
+class Power
+{
+    static double count=1;
+    double powerfn(double number, double power)
+    {
+        System.out.println("Recursive call: "+(count++));
+        if(power==0)
+        System.out.println("Recursive call: "+(count++));
+            return 1;
+        else
+            return number*powerfn(number,power-1);
+    }
+}
+
+class Power_recursion
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Power obj=new Power();
+        
+        System.out.print("Enter Number: ");
+        double num=sc.nextDouble();
+        System.out.print("Enter Power: ");
+        double pwr=sc.nextDouble();
+        
+        double ans=obj.powerfn(num,pwr);
+        System.out.println(num+" ^ "+pwr+" = "+ans);
+    }
+}
+*/
+
+
+/*
+//Using for loop:
+class Power
+{
+    static double count=0;
+    double powerfn(double number, double power)
+    {
+        double pwr=1;
+        for(int i=0;i<power;i++)
+        {
+            System.out.println("Iterative call: "+(i+1));
+            pwr=pwr*number;
+        }
+        return pwr;
+    }
+}
+
+class Power_recursion
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Power obj=new Power();
+        
+        System.out.print("Enter Number: ");
+        double num=sc.nextDouble();
+        System.out.print("Enter Power: ");
+        double pwr=sc.nextDouble();
+        
+        double ans=obj.powerfn(num,pwr);
+        System.out.println(num+" ^ "+pwr+" = "+ans);
+    }
+}
+*/
+
+
+class Power
+{
+    int a=0;
+    int b=1;
+    static int count=0;
+    
+    int fibo(int n)
+    {
+        if(count==n)
+        {
+            System.out.println(n);
+            return 0;
+        }
+        else
+        {
+            System.out.println(n);
+            a=b;
+            count++;
+            return fibo(b+a);
+        }
+    }
+}
+
+class Power_recursion
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Power obj=new Power();
+        
+        System.out.print("Enter Number of elements to print: ");
+        int num=sc.nextInt();
+        
+        obj.fibo(num);
+    }
+}
+
+
+
