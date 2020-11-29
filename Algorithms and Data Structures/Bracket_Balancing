@@ -1,0 +1,45 @@
+
+import java.util.*;
+
+public class Bracket_Balancing
+{
+    static String balance(String s)
+    {
+        Stack<Character> stack = new Stack<Character>();
+        for(int i=0; i<s.length(); i++)
+        {
+            if(s.charAt(i) == '{' || s.charAt(i) == '(' || s.charAt(i) == '[')
+                stack.push(s.charAt(i));
+            
+            else
+            {
+                if(stack.isEmpty())
+                    return "NO";
+                else
+                {
+                    char popValue = stack.pop();
+                    if(s.charAt(i)==']' && popValue != '[')
+                        return "NO";
+                    else if(s.charAt(i) == '}' && popValue != '{')
+                        return "NO";
+                    else if(s.charAt(i) == ')' && popValue != '(')
+                        return "NO";
+                }
+            }
+        }
+        
+        if(stack.isEmpty())
+            return "YES";
+        else
+            return "NO";
+    }
+    
+    public static void main(String args [])
+    {
+        String s1="{[()]}[]()";
+        String s2="{[()}[]()";
+        
+        System.out.println(balance(s1));
+        System.out.println(balance(s2));
+    }
+}
