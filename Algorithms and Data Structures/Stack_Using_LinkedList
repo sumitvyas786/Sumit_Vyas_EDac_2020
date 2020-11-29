@@ -1,0 +1,97 @@
+
+
+class Node
+{
+    int data;
+    Node next;
+    
+    Node(int a)
+    {
+        data=a;
+        next=null;
+    }
+}
+
+ class Functions
+{
+    Node head;
+    
+    void insertFirst(int data)
+    {
+        Node obj=new Node(data);
+        obj.next=head;
+        head=obj;
+    }
+
+    
+    
+    void print()
+    {
+        Node temp=head;
+        
+        while(temp!=null)
+        {
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    
+    void deleteFirst()
+    {
+        Node temp=head;
+        head=temp.next;
+        temp=null;
+    }
+    
+    void deleteLast()
+    {
+        Node temp=head;
+        while(temp.next.next!=null)
+        {
+            temp=temp.next;
+        }
+        temp.next=null;
+    }
+}
+
+public class Stack_Using_LinkedList
+{
+    Functions ob=new Functions();
+
+    void push(int data)
+    {
+        ob.insertFirst(data);
+    }
+
+    void pop()
+    {
+        ob.deleteFirst();
+    }
+
+    void display()
+    {
+        ob.print();
+    }
+    
+    
+    public static void main(String[] args)
+        {
+            Stack_Using_LinkedList obj=new Stack_Using_LinkedList();
+
+            obj.push(10);
+            obj.push(20);
+            obj.push(30);
+
+            obj.display();
+            System.out.println();
+            
+            obj.pop();
+            obj.display();
+            System.out.println();
+            
+            obj.pop();
+            obj.display();
+            
+            System.out.println();
+        }
+}
