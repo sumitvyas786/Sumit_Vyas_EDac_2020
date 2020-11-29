@@ -1,5 +1,3 @@
-
-
 class Node
 {
     int data;
@@ -22,7 +20,6 @@ class Node
         obj.next=head;
         head=obj;
     }
-
     
     
     void print()
@@ -41,16 +38,6 @@ class Node
         Node temp=head;
         head=temp.next;
         temp=null;
-    }
-    
-    void deleteLast()
-    {
-        Node temp=head;
-        while(temp.next.next!=null)
-        {
-            temp=temp.next;
-        }
-        temp.next=null;
     }
 }
 
@@ -75,23 +62,23 @@ public class Stack_Using_LinkedList
     
     
     public static void main(String[] args)
-        {
-            Stack_Using_LinkedList obj=new Stack_Using_LinkedList();
+    {
+        Stack_Using_LinkedList obj=new Stack_Using_LinkedList();
 
-            obj.push(10);
-            obj.push(20);
-            obj.push(30);
+        obj.push(10);
+        obj.push(20);
+        obj.push(30);
 
-            obj.display();
-            System.out.println();
-            
-            obj.pop();
-            obj.display();
-            System.out.println();
-            
-            obj.pop();
-            obj.display();
-            
-            System.out.println();
-        }
+        obj.display();
+        System.out.println();
+
+        obj.pop();
+        obj.display();
+        System.out.println();
+
+        obj.pop();
+        obj.display();
+
+        System.out.println();
+    }
 }
