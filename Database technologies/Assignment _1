@@ -1,0 +1,120 @@
+1.
+Member – It contains information about the members
+Column Name	Data Type	Description
+Member_Id	Number(5)	Unique Member ID
+Member_Name	Varchar(30)	 Name of the Library member
+Member_address	Varchar(50)	Address of the member
+Acc_Open_Date	Date	Date of membership
+Membership_type	Varchar(20)	Type of the membership such  as ‘Lifetime’, ’ Annual’, ‘Half Yearly’, ’ Quarterly’
+Penalty_Amount	Number(7)	Penalty amount due
+
+
+
+
+show databases;
+use assignments;
+
+create table Member(
+Member_Id int(5),
+Member_Name varchar(30),
+Member_address varchar(50),
+Acc_Oper_Date datetime,
+Membership_type varchar(20),
+Penality_Amount int(7)
+);
+
+insert into Member values(1,"Sumit Vyas","Delhi",curdate(),"Lifetime",650), (2,"Navjot Singh","Mumbai",curdate(),"Half Yearly",50),
+(3,"Sashi Kapoor","Himanchal",curdate(),"Annual",900),(4,"Sohan Kumar","Assam",curdate(),"Quarterly",320),(5,"Anand Jain","Gujrat",curdate(),"Lifetime",500);
+
+select * from Member;
+
+
+
+
+
+
+
+2.
+Books- It contains information about the books belongs to the library
+Column Name	Data Type	Description
+Book_No	Number(6)	Book identification number
+Book_Name		VarChar(30)	Name of the book
+Author_name	Varchar(30)	Author of the book
+Cost	Number(7)	Cost of the book
+Category	Char(10)	Category like Science , Fiction etc.
+
+
+
+
+
+
+show databases;
+use assignments;
+
+create table Books(
+Book_No int(6),
+Book_Name varchar(30),
+Auther_Name varchar(30),
+Cost int(7),
+Category char(10)
+);
+
+insert into Books values(1,"Physics","Sashi",400,"Science"), (1,"Chemistry","Gunjan",450,"Science"),
+(3,"Biology","Aarti",500,"Science"),(4,"Maths","R.D.Sharma",350,"Calculus"),(5,"English","Sohini",300,"Litrature"),(6,"Geography","Ranjan",200,"Social Sc.");
+
+select * from Books;
+
+
+
+
+
+
+
+
+
+3.
+Issue – It contains the information about issue of the books
+Column Name	Data Type	Description
+Lib_Issue_Id	Number(10)	Library Book Issue No
+Book_No	Number(6)	Number of the book issued
+Member_Id	Number(5)	Member that was issued the book
+Issue_Date	Date	Date of Issue
+Return_date	Date	Return date
+
+
+
+
+
+4.
+Task / Problems:
+1)	Create the table Member, Books and Issue without any constraints as mentioned in the schema description above.
+2)	View the structure of the tables.
+3)	Delete/Drop the column Penalty_Amount from Member
+4)	Insert following data in table Member:
+
+Member ID	Member Name	Member Address	Acc_Open_Date	Membership_type
+1	Richa Sharma	Pune	10-Dec-05	Lifetime
+2	Garima Sen	Pune	Current date	Annual
+
+5)	Insert at least 5 records with suitable data and save it.
+6)	Insert data in Book table as follows:
+
+Book_No	Book Name	Author	Cost	Category
+101	Let us C	Denis Ritchie	450	System
+102	Oracle – Complete Ref	Loni	550	Database
+103	Mastering SQL	Loni	250	Database
+104	PL SQL-Ref	ScottUrman	750	Database
+7)	View the data in the tables using simple SQL query.
+8)	Modify the price of book with id 103 to Rs 300 and category to RDBMS
+9)	Drop table Issue.
+10)	Again Create table Issue and insert following data into Issue table. Note leave the column Return_Date blank
+
+Lib_Issue_Id	Book No	Member ID	Issue Date	Return Date
+7001	101	1	10-Dec-06	
+7002	102	2	25-Dec-06	
+7003	104	1	15-Jan-06	
+7004	101	1	04-Jul-06	
+7005	104	2	15-Nov-06	
+7006	101	3	18-Feb-06	
+
+
