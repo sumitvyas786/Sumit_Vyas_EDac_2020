@@ -85,6 +85,26 @@ Return_date	Date	Return date
 
 
 
+show databases;
+use assignments;
+
+create table Issue(
+Lib_Issue_Id int(10),
+Book_No int(6),
+Member_Id int(5),
+Issue_Date date,
+Return_Date date
+);
+
+insert into Issue values (1,2313,324232,"2019-04-23","2020-01-20"),(2,2617,6756,"2019-04-23","2020-01-20"),
+(3,657,2372,"2018-06-07","2020-02-20"),(4,313,3323,"2012-04-03","2015-01-10"),(5,344,45232,"2018-07-13","2220-08-31");
+
+select * from Issue;
+
+
+
+
+
 4.
 Task / Problems:
 1)	Create the table Member, Books and Issue without any constraints as mentioned in the schema description above.
