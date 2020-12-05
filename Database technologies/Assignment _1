@@ -138,3 +138,24 @@ Lib_Issue_Id	Book No	Member ID	Issue Date	Return Date
 7006	101	3	18-Feb-06	
 
 
+
+desc issue;
+desc books;
+desc member;
+
+alter table member drop column Penality_Amount;
+
+insert into Member values(1,"Richa Sharma","Pune","2005-12-10","Lifetime"),(2,"Garima Sen","Pune","2005-12-10","Annual");
+
+insert into books values(101,"Let us C","Denis Ritchie",450,"System"),(102,"Oracle- Complete Ref","Loni",550,"Database"),
+(103,"Mastering SQL","Loni",250,"Database"),(104,"PL SQL-Ref","ScottUrman",750,"Database");
+
+select * from books;
+select * from member;
+select * from issue;
+
+update books set Cost=300, Category="RDBMS" where Book_No=103;
+
+alter table issue drop column Return_Date;
+alter table issue add column Return_Date varchar(20);
+
