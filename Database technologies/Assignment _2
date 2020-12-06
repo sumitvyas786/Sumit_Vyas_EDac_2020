@@ -188,28 +188,84 @@ mysql> select sum(cost) from books;
 
 ********************(date)********************************
 1. select title from title table where month is 'Apr'.
-
+mysql> select title from titles where pubdate like '%-04-%';
++-------------------+
+| title             |
++-------------------+
+| ASP.NET UNLEASHED |
+| JAVA COMP. REF    |
++-------------------+
 
 2. select year from system date.
-
+mysql> select year(current_date());
++----------------------+
+| year(current_date()) |
++----------------------+
+|                 2020 |
++----------------------+
 
 3. select month from system date.
-
+mysql> select month(current_date());
++-----------------------+
+| month(current_date()) |
++-----------------------+
+|                    12 |
++-----------------------+
 
 4. select last day of month when 'java' book published.
+mysql> select last_day(pubdate) from titles where title like '%java%';
++-------------------+
+| last_day(pubdate) |
++-------------------+
+| 2005-04-30        |
 
 **********************(DML)*******************************
 create table Employee with emp_id (number),emp_name(char(50)) and insert some value.
-1. Add one column name 'dept_id ' in table name 'Employee';
+mysql> create table employee(emp_id int(10), emp_name char(50));
+mysql> insert into employee values(101,'Shubham'),(102,'Darshan'),(103,'Sahil'),(104,'Rahul');
++--------+----------+
+| emp_id | emp_name |
++--------+----------+
+|    101 | Shubham  |
+|    102 | Darshan  |
+|    103 | Sahil    |
+|    104 | Rahul    |
++--------+----------+
 
+1. Add one column name 'dept_id ' in table name 'Employee';
+mysql> alter table employee add column dept_id int(10);
++--------+----------+---------+
+| emp_id | emp_name | dept_id |
++--------+----------+---------+
+|    101 | Shubham  |    NULL |
+|    102 | Darshan  |    NULL |
+|    103 | Sahil    |    NULL |
+|    104 | Rahul    |    NULL |
++--------+----------+---------+
 
 2. Change the datatype of column 'char' from tablename 'Employee' to 'varchar2'.
-
+mysql> alter table employee modify column emp_name varchar(30);
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| emp_id   | int(10)     | YES  |     | NULL    |       |
+| emp_name | varchar(30) | YES  |     | NULL    |       |
+| dept_id  | int(10)     | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
 
 3. update name of employee to 'Scott'
-
+mysql> update employee set emp_name='Scott' where emp_id=102;
++--------+----------+---------+
+| emp_id | emp_name | dept_id |
++--------+----------+---------+
+|    101 | Shubham  |    NULL |
+|    102 | Scott    |    NULL |
+|    103 | Sahil    |    NULL |
+|    104 | Rahul    |    NULL |
++--------+----------+---------+
 
 4. truncate the table.
+mysql> truncate table employee;
 
 **********************************************************
 Table=> Emp
@@ -232,4 +288,5 @@ Perform :
 1. perform all string function on string "CDAC juhu".
 2. perform different date and time functions. 
 *****************************End**********************************
+
 
