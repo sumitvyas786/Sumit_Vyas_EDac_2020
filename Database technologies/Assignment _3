@@ -11,14 +11,6 @@ empid	emp_name	dept_id		salary	 manager
 5	Jack		2		8000	  4
 6	King				6000	  1
 
-
-
-
-
-
-
-
-
 Department table
 -------------
 dept_id		dept_name
@@ -28,24 +20,100 @@ dept_id		dept_name
 Apply not null, primary key and foreign key constraints.
 
 
+create table department
+(
+dept_id int(5) not null,
+dept_name varchar(50),
+primary key(dept_id)
+);
+
+create table employee1
+(
+emp_id int(5) not null,
+emp_name varchar(50),
+dept_id int(5),
+salery int(10),
+manager int(5),
+primary key(emp_id),
+constraint fk_emp_deptid foreign key (dept_id) references department(dept_id)
+);
+
+INSERT INTO DEPARTMENT VALUES (1,'Finance');
+INSERT INTO DEPARTMENT VALUES (2,'Training');
+INSERT INTO DEPARTMENT VALUES (3,'Marketing');
+
+INSERT INTO EMPLOYEE1 VALUES (1,'Arun',1,8000,4);
+INSERT INTO EMPLOYEE1 VALUES (2,'Kiran',1,7000,1);
+INSERT INTO EMPLOYEE1 VALUES (3,'Scott',1,3000,1);
+INSERT INTO EMPLOYEE1 VALUES (4,'Max',2,9000,null);
+INSERT INTO EMPLOYEE1 VALUES (5,'Jack',2,8000,4);
+INSERT INTO EMPLOYEE1 VALUES (6,'King',null,6000,1);
 
 
 
 ***********order by
 1. select all from authors sort ascending by author name.
-
+mysql> select * from authors order by aname;
++------+-----------------+--------------------------+-------+
+| AUID | ANAME           | EMAIL                    | PHONE |
++------+-----------------+--------------------------+-------+
+|  103 | DAVAID HUNTER   | HUNTER@HOTMAIL.COM       | NULL  |
+|  106 | ED. ROMANS      | ROMANS@THESERVERSIDE.COM | NULL  |
+|  101 | HERBERT SCHILD  | HERBERT@YAHOO.COM        | NULL  |
+|  102 | JAMES GOODWILL  | GOODWILL@HOTMAIL.COM     | NULL  |
+|  105 | KEVIN LONEY     | LONEY@ORACLE.COM         | NULL  |
+|  104 | STEPHEN WALTHER | WALTHER@GMAIL.COM        | NULL  |
++------+-----------------+--------------------------+-------+
 
 2. select all from publishers sort descending by publisher name.
+mysql> select * from publishers order by pname;
++-------+------------------+-----------------------------+----------------+
+| PUBID | PNAME            | EMAIL                       | PHONE          |
++-------+------------------+-----------------------------+----------------+
+|     3 | TATA MCGRAW-HILL | FEEDBACK@TATAMCGRAWHILL.COM | 91-11-33333322 |
+|     4 | TECHMEDIA        | BOOKS@TECHMEDIA.COM         | 91-11-33257660 |
+|     1 | WILLEY           | WDT@VSNL.NET                | 91-11-23260877 |
+|     2 | WROX             | INFO@WROX.COM               | NULL           |
++-------+------------------+-----------------------------+----------------+
 
 ***********group by
-1. select all data and sum of salary from employee and group according to deptid.
+1. select all data and sum of salary from employee and group according to dept_id.
+mysql> select sum(salery) from employee1 group by dept_id;
++-------------+
+| sum(salery) |
++-------------+
+|        6000 |
+|       18000 |
+|       17000 |
++-------------+
 
-
-2. select deptid and sum of salary where salary is greater than 17000 and group by deptid.
+2. select dept_id and sum of salary where salary is greater than 17000 and group by dept_id.
+mysql> select dept_id and sum(salery)>17000 from employee1 group by dept_id;
++-------------------------------+
+| dept_id and sum(salery)>17000 |
++-------------------------------+
+|                             0		 |
+|                             1		 |
+|                             0 		|
++-------------------------------+
 
 *********having
-1. select deptid and sum of salary where sum of salary is greater than 18000 and grup by deptid.  
+1. select dept_id and sum of salary where sum of salary is greater than 18000 and group by dept_id.  
+mysql> select dept_id and sum(salery) from employee1 group by dept_id having sum(salery)>18000;
++-------------------------------+
+| dept_id and sum(salary) |
++-------------------------------+
+|                             0 		|
+|                             0 		|
+|                             0	 	|
++-------------------------------+
 
-
-2. select deptid and sum of salary where sum of salary is less than 20000 and grup by deptid.
-
+2. select dept_id and sum of salary where sum of salary is less than 20000 and group by dept_id.
+mysql> select dept_id and sum(salery) from employee1 group by dept_id having sum(salery)<20000;
++-------------------------+
+| dept_id and sum(salery) |
++-------------------------+
+|                    NULL 	|
+|                       1 	|
+|                       1	 |
++-------------------------+
