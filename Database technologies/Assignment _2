@@ -1,0 +1,235 @@
+DBT Assignment
+Following are the questions on Publishers, Authors, Titles and titleauthors tables:-
+*********************************************************
+1. List pname, phone, email from Publishers.
+mysql> select pname,phone,email from publishers;
++------------------+----------------+-----------------------------+
+| pname            | phone          | email                       |
++------------------+----------------+-----------------------------+
+| WILLEY           | 91-11-23260877 | WDT@VSNL.NET                |
+| WROX             | NULL           | INFO@WROX.COM               |
+| TATA MCGRAW-HILL | 91-11-33333322 | FEEDBACK@TATAMCGRAWHILL.COM |
+| TECHMEDIA        | 91-11-33257660 | BOOKS@TECHMEDIA.COM         |
++------------------+----------------+-----------------------------+
+
+2. List aname, phone from Authors.
+mysql> select aname,phone from authors;
++-----------------+-------+
+| aname           | phone |
++-----------------+-------+
+| HERBERT SCHILD  | NULL  |
+| JAMES GOODWILL  | NULL  |
+| DAVAID HUNTER   | NULL  |
+| STEPHEN WALTHER | NULL  |
+| KEVIN LONEY     | NULL  |
+| ED. ROMANS      | NULL  |
++-----------------+-------+
+
+3. List titleid, title, pubdate from Titles.
+mysql> select titleid, title, pubdate from titles;
++---------+----------------------+------------+
+| titleid | title                | pubdate    |
++---------+----------------------+------------+
+|    1001 | ASP.NET UNLEASHED    | 2002-04-12 |
+|    1002 | ORACLE10G COMP. REF. | 2005-05-01 |
+|    1003 | MASTERING EJB        | 2005-02-03 |
+|    1004 | JAVA COMP. REF       | 2005-04-03 |
+|    1005 | PRO. VB.NET          | 2005-06-15 |
+
+4. List auid, titleid, importance from titleauthors.
+mysql> select auid, titleid, importance from titleauthors;
++------+---------+------------+
+| auid | titleid | importance |
++------+---------+------------+
+|  104 |    1001 |          1 |
+|  105 |    1002 |          1 |
+|  106 |    1003 |          1 |
+|  101 |    1004 |          1 |
+|  102 |    1005 |          2 |
+|  103 |    1005 |          1 |
++------+---------+------------+
+
+*************************(like)***************************
+1. select subject name "oracle" from subjects table.
+mysql> select sname from subjects where sname like '%Oracle%';
++---------------------+
+| sname               |
++---------------------+
+| ORACLE DATABASE 10g |
++---------------------+
+
+2. select subject name starts with 'j'.
+mysql> select sname from subjects where sname like 'j%';
++------------------------+
+| sname                  |
++------------------------+
+| JAVA LANGUAGE          |
+| JAVA ENTEPRISE EDITION |
++------------------------+
+
+3. select subject name which contains ".net" .
+mysql> select sname from subjects where sname like '%.net%';
++------------------+
+| sname            |
++------------------+
+| ASP.NET          |
+| VISUAL BASIC.NET |
++------------------+
+
+4. select author name ends with 'er'.
+mysql> select aname from authors where aname like '%er';
++-----------------+
+| aname           |
++-----------------+
+| DAVAID HUNTER   |
+| STEPHEN WALTHER |
++-----------------+
+
+5. select publishers name which contains "hill".
+mysql> select pname from publishers where pname like '%hill%';
++------------------+
+| pname            |
++------------------+
+| TATA MCGRAW-HILL |
++------------------+
+
+******************(relational operator)***********************
+1. select title from title table having price less than 500.
+mysql> select title from titles where price<500;
++----------------+
+| title          |
++----------------+
+| MASTERING EJB  |
+| JAVA COMP. REF |
+| PRO. VB.NET    |
++----------------+
+
+2. select title from title table published before '3 april'.
+mysql> select title from titles where pubdate<'2005-04-03';
++-------------------+
+| title             |
++-------------------+
+| ASP.NET UNLEASHED |
+| MASTERING EJB     |
++-------------------+
+
+3. select subject name from subject having id as 'java' or 'jee'.
+mysql> select sname from subjects where subid='java' or subid='jee';
++------------------------+
+| sname                  |
++------------------------+
+| JAVA LANGUAGE          |
+| JAVA ENTEPRISE EDITION |
++------------------------+
+
+4. select author name from author table id greater than '103'.
+mysql> select aname from authors where auid>103;
++-----------------+
+| aname           |
++-----------------+
+| STEPHEN WALTHER |
+| KEVIN LONEY     |
+| ED. ROMANS      |
++-----------------+
+
+5. select all from title having titleid as 1001 or price > 400.
+mysql> select * from titles where titleid=1001 or price>400;
++---------+----------------------+-------+-------+------------+-------+-------+
+| TITLEID | TITLE                | PUBID | SUBID | PUBDATE    | COVER | PRICE |
++---------+----------------------+-------+-------+------------+-------+-------+
+|    1001 | ASP.NET UNLEASHED    |     4 | ASP   | 2002-04-12 | P     |   540 |
+|    1002 | ORACLE10G COMP. REF. |     3 | ORA   | 2005-05-01 | P     |   575 |
+|    1003 | MASTERING EJB        |     1 | JEE   | 2005-02-03 | P     |   475 |
+|    1004 | JAVA COMP. REF       |     3 | JAVA  | 2005-04-03 | P     |   499 |
+|    1005 | PRO. VB.NET          |     2 | VB    | 2005-06-15 | P     |   450 |
++---------+----------------------+-------+-------+------------+-------+-------
+
+**********************(IN operator)*************************
+6.select all from publishers table where publisher name is ('TECHMEDIA', 'WROX');
+mysql> select * from publishers where pname='techmedia' or pname='wrox';
++-------+-----------+---------------------+----------------+
+| PUBID | PNAME     | EMAIL               | PHONE          |
++-------+-----------+---------------------+----------------+
+|     2 | WROX      | INFO@WROX.COM       | NULL           |
+|     4 | TECHMEDIA | BOOKS@TECHMEDIA.COM | 91-11-33257660 |
++-------+-----------+---------------------+----------------+
+******************(aggregate function)**********************
+1. select maximum price from titles table.
+mysql> select max(price) from titles;
++------------+
+| max(price) |
++------------+
+|        575 |
++------------+
+
+2. select average importance from titleauthors. 
+mysql> select avg(importance) from titleauthors;
++-----------------+
+| avg(importance) |
++-----------------+
+|          1.1667 |
++-----------------+
+
+3. select number of records from author table.
+mysql> select count(auid) from authors;
++-------------+
+| count(auid) |
++-------------+
+|           6 |
++-------------+
+
+4. select sum of prices of all books.
+mysql> select sum(cost) from books;
++-----------+
+| sum(cost) |
++-----------+
+|      4250 |
++-----------+
+
+********************(date)********************************
+1. select title from title table where month is 'Apr'.
+
+
+2. select year from system date.
+
+
+3. select month from system date.
+
+
+4. select last day of month when 'java' book published.
+
+**********************(DML)*******************************
+create table Employee with emp_id (number),emp_name(char(50)) and insert some value.
+1. Add one column name 'dept_id ' in table name 'Employee';
+
+
+2. Change the datatype of column 'char' from tablename 'Employee' to 'varchar2'.
+
+
+3. update name of employee to 'Scott'
+
+
+4. truncate the table.
+
+**********************************************************
+Table=> Emp
+SAL(float(7,3))
+------------------
+1234.567
+1530.019
+1652.786
+1775.156
+Perform :
+1. round
+2. truncate 
+3. ceil
+4. floor
+5. sign(-15)
+6. mod
+7. sqrt
+8. power
+*****************************************************************
+1. perform all string function on string "CDAC juhu".
+2. perform different date and time functions. 
+*****************************End**********************************
+
