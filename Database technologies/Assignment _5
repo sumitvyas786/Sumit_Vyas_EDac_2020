@@ -1,0 +1,192 @@
+create database Assignment5;
+use assignment5;
+
+Create table EMP ( EMPNO numeric(4) not null, ENAME varchar(30) not null, JOB varchar(10), MGR numeric(4), HIREDATE date, SAL numeric(7,2), DEPTNO numeric(2) ); 
+Insert into EMP values(1000,  'Manish' , 'SALESMAN', 1003,  '2020-02-18', 600,  30) ;
+Insert into EMP  values(1001,  'Manoj' , 'SALESMAN', 1003,  '2018-02-18', 600,  30) ;
+Insert into EMP values(1002 , 'Ashish', 'SALESMAN',1003 , '2013-02-18',  750,  30 );
+Insert into EMP  values(1004,  'Rekha', 'ANALYST', 1006 , '2001-02-18', 3000,  10);
+Insert into EMP  values(1005 , 'Sachin', 'ANALYST', 1006 ,  '2019-02-18', 3000, 10 );
+Insert into EMP values(1006,  'Pooja',  'MANAGER'  ,     null    , '2000-02-18' ,6000, 10 );
+
+Create table dept (dno numeric(4) not null, dname varchar(10) not null,area varchar(30));
+Insert into dept(dno,dname,area) values(10,'Store','Mumbai');
+Insert into dept(dno,dname,area) values(20,'Purchase','Mumbai');
+Insert into dept(dno,dname,area) values(30,'Store', 'Delhi');
+Insert into dept(dno,dname,area) values(40,'Marketing','Pune');
+Insert into dept(dno,dname,area) values(50,'Finance','Delhi');
+Insert into dept(dno,dname,area) values(60,'Accounts','Mumbai');
+
+select * from emp;
+
+
+
+
+-- 1.	Write a Procedure that accepts values of two non-zero numbers
+-- 		using IN parameter and perform addition, subtraction, multiplication, division and print.
+
+delimiter $$
+create procedure calculate(IN var1 int, var2 int)
+begin
+select var1+var2;
+select var1-var2;
+select var1*var2;
+select var1/var2;
+end $$
+
+call calculate(4,5);
+
+
+
+-- 2.	Write a Procedure to print the string in REVERSE order.
+-- 		Take the input using IN parameter. (Ex. Database , o/p: esabatad)
+
+-- Using IN:
+delimiter $$
+create procedure str_rev_in(in var varchar(10))
+begin
+select reverse(var) as Reversed;
+end $$
+
+call str_rev_in('SUMIT');
+
+
+-- Using OUT:
+delimiter $$
+create procedure str_rev_out(in var1 varchar(20),out var varchar(20))
+begin
+select reverse(var1) into var;
+end $$
+
+set @var='';
+call str_rev_out('Sumit',@var);
+select @var as Reversed;
+
+
+-- Using INOUT:
+delimiter $$
+create procedure str_rev_inout(inout var varchar(10))
+begin
+declare var1 varchar(10);
+select reverse(var) into var;
+end $$
+
+set @var="SUMIT";
+call str_rev_inout(@var);
+select @var as Reversed;
+
+
+
+-- 3.	Write a Procedure to display top 5 employee based on highest salary
+-- 		and display employee number, employee name and salary.
+
+delimiter $$
+create procedure top5()
+begin
+select empno, ename, sal from emp order by sal desc limit 5;
+end $$
+
+call top5();
+
+drop procedure top5;
+
+
+
+
+-- 4.	Write a Procedure to create table emp_test with e_id integer, e_name varchar(10), e_joining_date date as columns
+-- Insert into test values(1000,  'Manish' , '2019-07-28') ;
+-- Insert into test values(1001,  'Meena' , '2020-02-18') ;
+-- Insert into test values(1002,  'Shyam' , '2018-04-16') ;
+-- Insert into test values(1003,  'Ram' , '2019-05-24') ;
+
+
+delimiter $$
+create procedure emp_test()
+begin
+create table test (e_id int(5), e_name varchar(10), e_joining_date date);
+end $$
+
+call emp_test();
+select * from test;
+
+
+
+
+
+-- 5.	Write a Procedure to add a department row in the DEPT table with the following values for
+-- 		columns deptno  value 60, Dname  value should be  ‘Education’, area value should be Pune.
+
+delimiter $$
+create procedure add_row()
+begin
+insert into dept value(60, 'Education', 'Pune');
+end $$
+
+call add_row();
+select * from dept;
+
+
+
+
+
+
+-- 6.	Write a program that declares an integer variable called num, assigns a value to it
+-- 		and print the value of the variable itself, its square, and its cube.
+
+delimiter $$
+create procedure prog1(in num int)
+begin
+select num, power(num,2), power(num,3) as Number1, SquareOfNo, CubeOfNo;
+end $$
+
+call prog1(5);
+
+
+
+
+
+
+
+
+-- 7.	Write a program that declares an integer variable assign a value to it and display it using OUT parameter.
+
+delimiter $$
+create procedure var_out1(out var1 int)
+begin
+declare output int;
+set output = 15;
+select output into var1;
+end $$
+
+call var_out1(@a);
+select @a as Variable;
+
+
+
+
+
+
+
+
+
+
+-- 8.	Write a program that demonstrates the usage of IN and OUT parameters.
+
+delimiter $$
+create procedure var_out(in var1 int, out var2 int)
+begin
+declare output int;
+set output = var1;
+select output into var2;
+end $$
+
+set @var2=0;
+call var_out(10,@var2);
+select @var2 as Variable;
+
+
+
+
+
+
+
