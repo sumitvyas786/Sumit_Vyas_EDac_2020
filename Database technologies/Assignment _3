@@ -66,7 +66,7 @@ mysql> select * from authors order by aname;
 +------+-----------------+--------------------------+-------+
 
 2. select all from publishers sort descending by publisher name.
-mysql> select * from publishers order by pname;
+mysql> select * from publishers order by pname desc;
 +-------+------------------+-----------------------------+----------------+
 | PUBID | PNAME            | EMAIL                       | PHONE          |
 +-------+------------------+-----------------------------+----------------+
@@ -78,7 +78,7 @@ mysql> select * from publishers order by pname;
 
 ***********group by
 1. select all data and sum of salary from employee and group according to dept_id.
-mysql> select sum(salery) from employee1 group by dept_id;
+mysql> select *, sum(salery) from employee1 group by dept_id;
 +-------------+
 | sum(salery) |
 +-------------+
@@ -88,32 +88,32 @@ mysql> select sum(salery) from employee1 group by dept_id;
 +-------------+
 
 2. select dept_id and sum of salary where salary is greater than 17000 and group by dept_id.
-mysql> select dept_id and sum(salery)>17000 from employee1 group by dept_id;
-+-------------------------------+
-| dept_id and sum(salery)>17000 |
-+-------------------------------+
-|                             0		 |
-|                             1		 |
-|                             0 		|
-+-------------------------------+
-
+mysql> select dept_id, sum(salery) from employee1 where salery>7000 group by dept_id;
++---------+-------------+
+| dept_id | sum(salery) |
++---------+-------------+
+|       1 |        8000 |
+|       2 |       17000 |
++---------+-------------+
+mysql> select dept_id, sum(salery) from employee1 where salery>17000 group by dept_id;
+Empty set
 *********having
 1. select dept_id and sum of salary where sum of salary is greater than 18000 and group by dept_id.  
-mysql> select dept_id and sum(salery) from employee1 group by dept_id having sum(salery)>18000;
-+-------------------------------+
-| dept_id and sum(salary) |
-+-------------------------------+
-|                             0 		|
-|                             0 		|
-|                             0	 	|
-+-------------------------------+
+mysql> select dept_id, sum(salery) from employee1 group by dept_id having sum(salery)>18000;
+Empty set
+mysql> select dept_id, sum(salery) from employee1 group by dept_id having sum(salery)>=18000;
++---------+-------------+
+| dept_id | sum(salery) |
++---------+-------------+
+|       1 |       18000 |
++---------+-------------+
 
 2. select dept_id and sum of salary where sum of salary is less than 20000 and group by dept_id.
-mysql> select dept_id and sum(salery) from employee1 group by dept_id having sum(salery)<20000;
-+-------------------------+
-| dept_id and sum(salery) |
-+-------------------------+
-|                    NULL 	|
-|                       1 	|
-|                       1	 |
-+-------------------------+
+mysql> select dept_id, sum(salery) from employee1 group by dept_id having sum(salery)<20000;
++---------+-------------+
+| dept_id | sum(salery) |
++---------+-------------+
+|    NULL |        6000 |
+|       1 |       18000 |
+|       2 |       17000 |
++---------+-------------+
