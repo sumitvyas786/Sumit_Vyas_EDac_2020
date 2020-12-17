@@ -1,1 +1,26 @@
-g
+-- Cursor for updating saleries of specific departments by 1000
+
+
+delimiter $$
+create procedure upd_sal_dpt(in id int(10))
+begin
+	declare end_var int default 0;
+    declare deptid int;
+    declare count int default 1;
+    declare crsr_update1 cursor for select dept_id from employee where dept_id=id;
+    declare continue handler for not found set end_var=1;
+    open crsr_update1;
+		tag: loop
+		fetch crsr_update1 into deptid;
+			if end_var = 1 then
+            leave tag;
+			end if;
+            if count=1 then
+            set sql_safe_updates=0;
+            update employee set salery=salery+1000 where dept_id=deptid;
+            set sql_safe_updates=1;
+            set count=2;
+            end if;
+        end loop tag;
+    close crsr_update1;
+end $$
