@@ -1,0 +1,14 @@
+-- REGEXP:
+select emp_name from employee where emp_name rlike '[an*]';
+select emp_name from employee where emp_name rlike '[an+]';
+select emp_name from employee where emp_name rlike '[kac?]';
+select emp_name from employee where emp_name rlike '[d-o]';
+select emp_name from employee where emp_name rlike '^[a]';
+select emp_name from employee where emp_name rlike '[^ak]';
+select emp_name from employee where emp_name rlike '^[a]';
+select emp_name from employee where emp_name rlike '[n]$';
+select emp_name from employee where emp_name rlike '^[a]';
+select emp_name from employee where emp_name rlike '[w-z]';
+select emp_name from employee where emp_name rlike '[0-9]';
+select emp_name from employee where emp_name rlike '[[:<:]]ki';
+select emp_name from employee where emp_name rlike 'an[[:>:]]';
