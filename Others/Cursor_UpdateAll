@@ -1,0 +1,21 @@
+-- Cursor for updating saleries of all by 1000
+
+delimiter $$
+create procedure upd_sal()
+begin
+declare id int(5);
+declare flag int default 0;
+declare update_sal cursor for select emp_id from employee;
+declare continue handler for not found set flag=1;
+open update_sal;
+tag: loop
+		fetch update_sal into id;
+			if flag = 1 then
+            leave tag;
+            end if;
+            update employee set salery=salery+1000 where emp_id=id;
+end loop tag;
+close update_sal;
+end $$
+
+call upd_sal()
