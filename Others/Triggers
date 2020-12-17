@@ -1,0 +1,38 @@
+-- Delete:
+
+Delimiter $$
+Create trigger after_del after delete on emp
+for each row
+begin
+insert into ex_emp(empno, ename, dno)
+values(old.empno, old.ename, old.dno);
+end $$
+
+delete from emp where empno=102;
+
+
+
+--Insert:
+
+Delimiter $$
+Create trigger after_del1 after insert on emp
+for each row
+begin
+insert into ex_emp(empno, ename, dno)
+values(new.empno, new.ename, new.dno);
+end $$
+
+delete from emp where empno=102;
+
+
+
+
+-- Update:
+
+Delimiter $$
+Create trigger after_update after update on emp
+for each row
+begin
+update ins
+set ename=new.ename where empno=new.empno;
+end $$
