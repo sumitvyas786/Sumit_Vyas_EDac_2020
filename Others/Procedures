@@ -1,0 +1,39 @@
+-- Write a Procedure to print the string in REVERSE order.
+
+-- Using IN:
+delimiter $$
+create procedure str_rev_in(in var varchar(10))
+begin
+select reverse(var) as Reversed;
+end $$
+
+call str_rev_in('SUMIT');
+
+
+
+
+
+-- Using OUT:
+delimiter $$
+create procedure str_rev_out(in var1 varchar(20),out var varchar(20))
+begin
+select reverse(var1) into var;
+end $$
+
+set @var='';
+call str_rev_out('Sumit',@var);
+select @var as Reversed;
+
+
+
+
+-- Using INOUT:
+delimiter $$
+create procedure str_rev_inout(inout var varchar(10))
+begin
+select reverse(var) into var;
+end $$
+
+set @var="SUMIT";
+call str_rev_inout(@var);
+select @var as Reversed;
