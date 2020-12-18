@@ -1,3 +1,22 @@
+
+-- While:
+delimiter $$
+create function fact(var int) returns int
+begin
+declare sum1 int;
+    set sum1=1;
+    while var > 1 do
+    set sum1=sum1*var;
+    set var=var-1;
+    end while;
+    return sum1;
+end $$
+
+select fact(4);
+
+
+
+-- Loop:
 delimiter $$
 CREATE FUNCTION FACT(X INT) RETURNS INT4
 BEGIN
