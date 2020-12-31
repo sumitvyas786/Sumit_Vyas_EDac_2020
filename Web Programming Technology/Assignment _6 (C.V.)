@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <title>Sumit Resume</title>
+    <style>
+        h1{
+            color: blanchedalmond;
+        }
+
+        .h1{
+            color: rgb(235, 255, 124);
+            font-size: 20px;
+            background-color:rgba(51, 26, 0, 0.80);
+            
+        }
+
+        .h2{
+            color: rgb(247, 253, 211);
+            font-size: 20px;
+        }
+
+        .heading_back{
+            background-color: rgba(0, 0, 255, 0.383);
+        }
+
+        .back_color{
+			background-color: rgba(51, 26, 0, 0.80);
+			color: blanchedalmond;
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        a:link {
+            color:yellow;
+        }
+        a:hover {
+            color: white;
+        }
+
+    </style>
+</head>
+<body background="bg.jpg">
+    <h1 align="center"><u>RESUME</u></h1>
+    
+	
+	
+	
+    <br>
+    <table border="0%" width="100%">
+        
+		<tr rowspan=3>
+            <td width="4%">&nbsp</td>
+
+            <td width="20%" class="back_color"><p><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <img alt="Sumit's passport image" src="a.jpg" width="130" height="168"></p>
+              <p><br>
+              </p></td>
+
+            <td width="2%"></td>
+
+            <th width="50%" class="h1"><font size="7">Sumit Vyas</font><br>
+			<font size="5">CDAC, Mumbai</font>
+			</th>
+
+            <td width="5%"></td>
+        </tr>
+		
+		
+		
+        <tr>
+            <td></td>
+			
+            <td bgcolor="#331a00" class="back_color">
+                <ul><br>
+				<font class="heading_back"><b>&nbsp <u>CONTACT:</u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></font>
+                <br>
+				<br><img src="phone.jpg" alt="Phone" width="22" height="16">&nbsp&nbsp 8989482700, 8770465048</li>
+                <br><a href="mailto: sumitvyas786@gmail.com"><img src="mail.jpg" alt="Mail" width="23" height="15"></a>
+				&nbsp&nbsp<a href="mailto: sumitvyas786@gmail.com">sumitvyas786@gmail.com</a></li>
+                <br><img src="add.jpg" alt="Address" width="23" height="15"></a>&nbsp&nbsp Damoh, Madhya Pradesh, 470661</li>
+			</ul>
+			</td>
+			
+            <td width="0%"></td>
+			
+            <td class="h2" rowspan=2>
+                <br><h2><u>Profile:</u></h2>
+			    <p>Seeking a beginner role to enhance and explore my technical knowledge gained at CDAC, Mumbai in the six months.
+			Strong in design and integration with intuitive problem-solving skills. Proficient in JAVA, HTML, CSS, JAVASCRIPT,
+			and SQL. Passionate about implementing and launching new projects. Ability to translate business
+			requirements into technical solutions.</p>
+			
+			
+			<h2><u>Technical Experties:</u></h2>
+			<table border="0" width="100%" class="h2">
+			
+			<tr>
+				<td width="2">
+					<li>Programming Languages:</li>
+				</td>
+				<td>
+					Core Java, C, C++.
+				</td>
+			</tr>
+			<tr>
+				</td>
+				<td>
+                    <li>Database:</li>
+				</td>
+				<td>
+					MySQL, MongoDB.
+				</td>
+			</tr>
+			</tr>
+			<tr>
+				<td>
+                    <li>Web Technology:</li>
+				</td>
+				<td>
+					HTML, CSS, JavaScript.
+				</td>
+			</tr>
+			<tr>
+				<td>
+                    <li>IDE's:</li>
+				</td>
+				<td>
+					Eclipse, NetBeans, VS Code.
+				</td>
+			</tr>
+			
+			</table>
+            
+            <h2><u>Personal & Professional Skills:</u></h2>
+            <ol>
+                <li>Focused.</li>
+                <li>Team Worker.</li>
+                <li>Self-Confident.</li>
+                <li>Adaptability and ability to work well under pressure.</li>
+        
+        </td>
+        </tr>
+		
+		
+		
+        <tr>
+            <td></td>
+			
+            <td bgcolor="#331a00" class="back_color">
+			<ul>
+            <br><font class="heading_back"><b>&nbsp <u>EDUCATION:</u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp</b></font>
+			</ul>
+            <ol>
+				<li><b>Bachelor of Engineering</b></li>
+                <ul type="disc">
+				<li>Mechanical</li>
+                <li>Oriental College of Technology</li>
+                <li>RGPV University, Bhopal (M.P.)</li><br>
+				</ul>
+				
+				<li><b>PGDCA</b></li>
+                <ul type="disc">
+				<li>Computer Application</li>
+                <li>TIMES College, Damoh</li>
+                <li>MCU University, Bhopal (M.P.)</li><br>
+				</ul>
+                
+				<li><b>Secondary & Senior Sec.</b></li>
+                <ul type="disc">
+				<li>Science & Maths</li>
+                <li>Kendriya Vidyalaya, Damoh</li>
+                <li>CBSE Board<br>
+				</ul>
+            </ol>
+			</td>
+			
+        </tr>
+		
+    </table>
+</body>
+</html>
