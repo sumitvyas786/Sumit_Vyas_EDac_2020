@@ -9,7 +9,8 @@
   <h1>Table Example: Spanning Rows and Columns</h1>
   <br>
   
-  <table border="2" title="A more complex sample table">
+  <table border="2">
+	  <caption>A more complex sample table</caption>
 	<tr>
 		<td rowspan="2"><img src="camel.jpg" alt="camel"></td>
 		<th colspan="4">Camelid comparison<br>Approximate as of 6/2011</th>
