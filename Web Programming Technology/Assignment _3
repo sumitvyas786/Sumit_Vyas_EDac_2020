@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment_3</title>
+</head>
+<body>
+  <h1>Here are my favourite sites</h1>
+  <h2>Click on a name to go  to that page</h2>
+  <ul>
+	<li><a href="https://www.youtube.com">YouTube</a></li>
+	<li><a href="https://www.wikipedia.org">Wikipedia</a></li>
+	<li><a href="https://www.amazon.in">Amazon</a></li>
+	<li><a href="https://www.linkedin.com">LinkedIn</a></li>
+  </ul>
+</body>
+</html>
