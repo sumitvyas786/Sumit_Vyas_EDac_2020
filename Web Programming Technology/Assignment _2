@@ -1,0 +1,149 @@
+<!-- Design a Web page to express your thoughts about Life journey
+of our dearest late Mr Rishi Kapoor or Mr Irrfan Khan. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment_2</title>
+  
+  <style>
+	table {
+		border: 1;
+    color: rgb(255, 151, 14);
+    text-align: left;
+    font-size: 180%;
+    margin-top: 18%;
+    background-color:rgba(96, 2, 133,0.3);
+  }
+  
+  h1 {
+      color: white;
+      text-align: center;
+  }
+  
+  p {
+      color: rgb(246, 255, 125);
+      font-size: 140%;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  ol {
+      color: rgb(247, 247, 245);
+      font-size: 180%;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .split {
+      position: absolute;
+      z-index: 1;
+      top: 0%;
+      overflow-x: inherit;
+  }
+
+  .left {
+      margin-left: 5%;
+      margin-top: 7%;
+      padding-top: 10px;
+  }
+
+  .right {
+      margin-left: 40%;
+      margin-right: 0%;
+  }
+
+  body {
+    border: 5px solid khaki;
+    border-radius: 4% 4% 4% 4%;
+  }
+
+  </style>
+</head>
+
+<body background="back.jpg">
+  
+  <h1><u>Life journey of our dearest late Mr. Irrfan Khan</u></h1>
+  <br>
+  <div class="split left">
+  <img src="irfan.jpg" width="40%" height="80%" style="margin-left: 10%; margin-top: 0.8%; border-radius:120px 20px 120px 20px;">
+  </div>
+
+  <div class="split right">
+	<table>
+		<tr>
+			<th>Birth :</th>
+			<td>January 7, 1966;  Jaipur, Rajasthan, India</td>
+		</tr>
+		<tr>
+			<th>Death :</th>
+			<td>April 29, 2020; (53 years old); Mumbai, Maharashtra, India</td>
+		</tr>
+		<tr>
+			<th>Occupation :</th>
+			<td>Actor, Producer</td>
+		</tr>
+		<tr>
+			<th>Active in Industry :</th>
+			<td>1985-2020</td>
+		</tr>
+		<tr>
+			<th>Wife :</th>
+			<td>Sutapa Sikdar (married in 1995)</td>
+		</tr>
+		<tr>
+			<th>Children :</th>
+			<td>Ayaan Khan and Babil Khan</td>
+		</tr>
+	</table>
+</div>
+
+  <fieldset style="margin-top: 30%; background-color:rgba(96, 2, 133,0.3);"><legend>
+  <h1>Irrfan Khan: Early Life, Family and Education</h1>
+  </legend>
+    <p style="margin-top: 0;">Irrfan Khan was born as Sahabzade Irfan Ali Khan on January 7, 1966, in Jaipur, Rajasthan to a Muslim Pashtun family. Irrfan Khan's mother Begum Khan hailed from the Tonk Hakim family and his father Jagiradar Khan was from Khajuriya village near the Tonk district. Irrfan Khan's father ran a tire business and his mother was a housewife.  Irrfan Khan died on April 29, 2020, at the age of 53 years due to colon infection. 
+    <br><br>
+    Irrfan Khan was a skilled cricketer and was selected for CK Nayudu Tournament-- a stepping stone to First-Class cricket for under 23 players. However, he did not turn up for the tournament owing to lack of funds.
+    <br><br>
+    In 1984, Irrfan Khan was doing his Master of Arts degree when he got a scholarship to study at National School of Drama (NSD) in New Delhi. When Irrfan Khan arrived in Bombay, he worked as an air conditioner repairman and one of the houses he visited to repair an air conditioner was the house of superstar Rajesh Khanna.
+    <br><br>
+    Irrfan Khan married Sutapa Sikdar (a Hindu Brahmin) in 1995. The couple has two sons: Ayaan Khan and Babil Khan. Sutapa is an Indian Film Producer, Dialogue Writer and Screenplay Writer. She is a part of many famous movies-- Khamoshi: The Musical (Dialogue Writer, 1996), Supari (Dialogue Writer, 2003), Kahaani (Dialogue Writer, 2003), Madaari (Producer, 2016), Qarib Qarib Singlle (Producer, 2017).</p>
+  </fieldset>
+<br>
+  
+
+  <fieldset style="background-color:rgba(96, 2, 133,0.3);"><legend>
+    <h1>Irrfan Khan: Personal Quotes</h1>
+    </legend>
+    <marquee direction="up">
+    <ol>
+      <li><font style="color: rgb(246, 255, 125);" size="5px">I often visualized giving my mother this big black suitcase crammed with notes as those gangsters do in our masala flicks.</font></h3></li><br>
+      <li><font style="color: rgb(246, 255, 125);" size="5px">We're yet to make inroads into the West and the way Chinese cinema is made. I mean, long before Ang Lee's 'Crouching Tiger Hidden Dragon', Bruce Lee had made an impact on the Western audience with his 'Enter The Dragon'. Indian cinema is yet to make that kind of impact. But we're getting there.</font></h3></li>
+    </ol>
+  </marquee>
+  </fieldset>
+
+  <fieldset style="background-color:rgba(96, 2, 133,0.3);"><legend>
+    <h1>Irrfan Khan: Personal Quotes</h1>
+    </legend>
+  
+    <ol>
+      <li><font size="6%">Hasil: </font><font style="color: rgb(246, 255, 125);" size="5px">Won the Filmfare Awards for the Best Actor in a Negative Role and was nominated for Zee Cine Awards 'Best Performance in a Villainous Role' in 2004.</font></h3></li><br>
+      <li><font size="6%">Maqbool: </font><font style="color: rgb(246, 255, 125);" size="5px">Won the Screen Awards for Best Performance in a Negative Role and was nominated for Zee Cine Awards 'Best Performance in a Villainous Role' in 2004. </font></h3></li><br>
+      <li><font size="6%">The Namesake: </font><font style="color: rgb(246, 255, 125);" size="5px">Won the Alliance of Women Film Journalists for Best Seduction and was nominated for Independent Spirit Award 'Best Supporting Male' and Stardust Awards 'Best Supporting Actor' in 2007.</font></h3></li><br>
+      <li><font size="6%">Slumdog Millionaire: </font><font style="color: rgb(246, 255, 125);" size="5px">Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture and Central Ohio Film Critics Association for Best Ensemble in 2008-2009. The movie also won 8 Oscars.</font></h3></li><br>
+      <li><font size="6%">Mumbai Meri Jaan: </font><font style="color: rgb(246, 255, 125);" size="5px">Nominated for International Indian Film Academy Awards 'Best Actor In A Supporting Role' in 2009.</font></h3></li><br>
+      <li></font><font style="color: rgb(246, 255, 125);" size="5px">He also won GQ (Indian edition) Man of the year award in 2009.</font></h3></li><br>
+      <li></font><font style="color: rgb(246, 255, 125);" size="5px">Irrfan Khan won Padma Shri for Arts, International Indian Film Academy Awards for Outstanding Achievement in International Cinema and CNN-IBN Indian of the Year for Entertainment in 2011-2012.</font></h3></li><br>
+      <li><font size="6%">Paan Singh Tomar: </font><font style="color: rgb(246, 255, 125);" size="5px">Won National Film Awards for Best Actor, Filmfare Awards for Best Actor (Critics), Times of India Film Awards for Best Actor, Institute for Research and Documentation in Social Sciences for Best Male Character and Screen Awards for Best Actor. Irrfan was nominated for Filmfare Awards 'Best Actor', Producers Guild Film Awards 'Best Actor' and Zee Cine Awards 'Best Actor' in 2013.</font></h3></li><br>
+      <li><font size="6%">The Lunchbox: </font><font style="color: rgb(246, 255, 125);" size="5px">Won Asian Film Awards and Dubai International Film Festival for Best Actor, Asia-Pacific Film Festival for Outstanding Achievement Award, Producers Guild Film Awards for Star Verdict Performer of the Year and Entertainer of the Year. Irrfan Khan was nominated for Screen Awards 'Best Actor', Asia-Pacific Film Festival 'Best Actor' in 2013-14.</font></h3></li><br>
+      <li><font size="6%">Haider: </font><font style="color: rgb(246, 255, 125);" size="5px">Nominated for Bollywood Hungama Surfers and Producers Guild Film Awards 'Choice Movie Awards 'Best Actor in a Supporting Role'  in 2015. </font></h3></li><br>
+    </ol>
+  </fieldset>
+
+<br>
+<br>
+<br><br>
+</body>
+</html>
