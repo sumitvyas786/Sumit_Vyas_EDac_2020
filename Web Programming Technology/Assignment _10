@@ -1,0 +1,108 @@
+<!-- c)Demonstrate use of different String methods: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_11</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>c)Demonstrate use of different String methods:</p>
+    <h1>Differnet String + Array Functions:</h1>
+
+    <h3>String: "This is my webpage!"</h3>
+    <ol>
+        <li id="l8"></li>
+        <li id="l9"></li>
+        <li id="l10"></li>
+        <li id="l11"></li>
+        <li id="l12"></li>
+        <li id="l13"></li>
+        <li id="l14"></li>
+        <li id="l15"></li>
+    </ol>
+
+    <h3>Array1: [1, 2, 3, 4, 5] <br>Array2: [6, 7, 8, 9, 0]</h3>
+    <ol>
+        <li id="l29"></li>
+        <li id="l16"></li>
+        <li id="l17"></li>
+        <li id="l18"></li>
+        <li id="l19"></li>
+        <li id="l20"></li>
+        <li id="l21"></li>
+        <li id="l22"></li>
+        <li id="l23"></li>
+        <li id="l24"></li>
+        <li id="l25"></li>
+        <li id="l26"></li>
+        <li id="l27"></li>
+        <li id="l28"></li>
+    </ol>
+
+    <script>
+        var Array1 = [1, 2, 3, 4, 5];
+        var Array2 = [6, 7, 8, 9, 0];
+
+        var hh = Array1.length;
+        var h = Array1.concat(Array2);
+        var i = Array1.join(", ");
+        var j = Array1.indexOf(4);
+        var k = Array1.lastIndexOf(4,6);
+        var l = Array1.slice(2, 4);
+        var m = Array1.splice(2, 2, "11", "12");
+        var n = Array1.pop();
+        var o = Array1.push(20);
+        var p = Array1.shift();
+        var q = Array1.unshift("11");
+        var r = Array1.sort();
+        var s = Array1.valueOf("11");
+        var t = Array1.reverse();
+
+        document.getElementById("l29").innerHTML="Array1.length >> "+hh;
+        document.getElementById("l16").innerHTML="Array1.concat(Array2) >> "+h;
+        document.getElementById("l17").innerHTML='Array1.join(",") >> '+i;
+        document.getElementById("l18").innerHTML="Array1.indexOf(4) >> "+j;
+        document.getElementById("l19").innerHTML="Array1.lastindexOf(4, 6) >> "+k;
+        document.getElementById("l20").innerHTML="Array1.slice(2,4) >> "+l+" (returns remaining items)";
+        document.getElementById("l21").innerHTML='Array1.splice(2, 2, "11", "12") >> '+m+" (returns removed items + adds new items)";
+        document.getElementById("l22").innerHTML="Array1.pop( ) >> "+n+" (removes element from end)";
+        document.getElementById("l23").innerHTML="Array1.push(20) >> "+o+" (adds element at end)";
+        document.getElementById("l24").innerHTML="Array1.shift( ) >> "+p+" (removes element from start)";
+        document.getElementById("l25").innerHTML='Array1.unshift("11") >> '+q+" (adds element at start)";
+        document.getElementById("l26").innerHTML="Array1.sort() >> "+r+" (sorts alphabetically + asc.)";
+        document.getElementById("l27").innerHTML='Array1.valueOf("11") >> '+s;
+        document.getElementById("l28").innerHTML="Array1.reverse() >> "+t+" (sorts alphabetically + desc.)";
+
+
+
+        var String = "This is my webpage!";
+
+        var u = String.length;
+        var v = String.toString();
+        var w = String.charAt("15");
+        var x = String[3];
+        var y = String.charCodeAt("10");
+        var z = String.toUpperCase();
+        var aa = String.toLowerCase();
+        var bb = String.replace("webpage","CDAC");
+
+        document.getElementById("l8").innerHTML="String.length >> "+u;
+        document.getElementById("l9").innerHTML="String.toString( ) >> "+v;
+        document.getElementById("l10").innerHTML='String.charAt("15") >> '+w;
+        document.getElementById("l11").innerHTML="String[3] >> "+x;
+        document.getElementById("l12").innerHTML='String.charCodeAt("10") >> '+y;
+        document.getElementById("l13").innerHTML="String.toUpperCase( ) >> "+z;
+        document.getElementById("l14").innerHTML="String.toLowerCase( ) >> "+aa;
+        document.getElementById("l15").innerHTML="String.replace( ) >> "+bb;
+        
+    </script>
+</body>
+</html>
