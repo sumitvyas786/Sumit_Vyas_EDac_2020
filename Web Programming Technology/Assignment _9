@@ -1,0 +1,48 @@
+<!-- b)Declare variables with different Datatypes and initialize and display them: -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>b)Declare variables with different Datatypes and initialize and display them:</p>
+    <h1>Differnet Datatypes:</h1>
+    <ol>
+    <li id="l1"></li>
+    <li id="l2"></li>
+    <li id="l3"></li>
+    <li id="l4"></li>
+    <li id="l5"></li>
+    <li id="l6"></li>
+    <li id="l7"></li>
+    </ol>
+
+    <script>
+        var a = 10;
+        var b = "Sumit Vyas";
+        var c = true;
+        var d = [1,2,3,4,5];
+        var e = {name: "Sumit", subject:"WT"};
+        var f = null;
+        var g; //var g = undefined;
+
+        document.getElementById("l1").innerHTML="NUMBER >> "+a;
+        document.getElementById("l2").innerHTML="STRING >> "+b;
+        document.getElementById("l3").innerHTML="BOOLEAN >> "+c;
+        document.getElementById("l4").innerHTML="ARRAY >> "+d;
+        document.getElementById("l5").innerHTML="OBJECT >> "+e+" >> "+e.name+" "+e.subject;
+        document.getElementById("l6").innerHTML="NULL >> "+f;
+        document.getElementById("l7").innerHTML="UNDEFINED >> "+g;
+    </script>
+</body>
+</html>
