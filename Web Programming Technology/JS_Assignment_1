@@ -1,0 +1,53 @@
+<!-- 1.WAP to illustrate implementation of functions in javascript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_1</title>
+</head>
+<body>
+    <script>
+
+        //Simple function:
+        function sum(x, y)
+        {
+            return x+y;
+        }
+        document.write("Simple function: "+sum(2,4));
+
+        document.write("<br>");
+
+
+
+        //Anonymous function:
+        var sub = function(x, y)
+        {
+            return x-y;
+        }
+        document.write("Anonymous function: "+sub(4,2));
+
+        document.write("<br>");
+
+
+
+        //Anonymous function with arrow (=>) symbol:
+        var sub1 =(x, y) => x-y;
+        document.write("Anonymous function with arrow (=>) symbol: "+sub1(6,2));
+
+        document.write("<br>");
+
+
+
+        //Anonymous + calling function:
+        var MultNextNum = function(x, y)
+        {
+            return (x * sum(x, 1));
+        }
+        document.write("Anonymous + calling function: "+MultNextNum(4, sum));
+
+        document.write("<br>");
+    </script>
+</body>
+</html>
