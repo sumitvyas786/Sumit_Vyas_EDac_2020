@@ -1,0 +1,17 @@
+<!-- 3.WAP to illustrate declaration of array , assignment of value to an array and display it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_3</title>
+</head>
+<body>
+    <script>
+        var arr=[];
+        arr=[1, 2, 3, 4, 5];
+        document.write("arr[1, 2, 3, 4, 5] = "+arr);
+    </script>
+</body>
+</html>
