@@ -1,0 +1,26 @@
+<!-- 7.Write a factorial function that returns the factorial of a given number, n.
+    Make sure you return the calculated value and not just print it. [function factorial(n){...}] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_7</title>
+</head>
+<body>
+    <script>
+        function factorial(x)
+        {
+            var fact=1;
+            for(var n=x ; n>1 ; n--)
+            {
+                fact=fact*n;
+            }
+            return fact;
+         }
+      var x =  factorial(5)
+      document.write(x);
+    </script> 
+</body>
+</html>
