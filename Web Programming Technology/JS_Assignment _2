@@ -1,0 +1,22 @@
+<!-- 2.WAP to illustrate the declaration of object, assignment of value and display it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_2</title>
+</head>
+<body>
+    <script>
+        var a = {};
+        a["var"]="value 1";
+        document.write(a.var);
+        
+        document.write("<br>");
+   
+        a.key = "value 2";
+        document.write(a.key);
+       </script>
+</body>
+</html>
