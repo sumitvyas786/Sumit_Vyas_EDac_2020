@@ -1,0 +1,33 @@
+<!-- 8.Write a javascript function that converts a given amount of money into coins of
+    denominations (1, 2, 5, 10 and 25). [function convert_to_coins(amount) {...}].
+    You may choose to print the coin denominations used on the console.
+    E.g. convert_to_coins(87) should print 25 25 25 10 2. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_8</title>
+</head>
+<body>
+    <script>
+        function convert_to_Coins(amount){
+           var  tf = amount/25;   // tf=3
+            amount = amount % 25; // amount=12 
+            var tn = amount/10; // tn=1
+            amount = amount % 10; //amount=2
+            var F = amount/5;
+            amount = amount % 5;
+            var t = amount/2;
+            amount = amount % 2;
+            console.log("Rs.25 Coins: "+Math.floor(tf));
+            console.log("Rs.10 Coins: "+Math.floor(tn));
+            console.log("Rs.5 Coins: "+Math.floor(F));
+            console.log("Rs.2 Coins: "+Math.floor(t));
+            console.log("Rs.1 Coins: "+Math.floor(amount));
+        }
+        convert_to_Coins(87);
+    </script>
+</body>
+</html>
