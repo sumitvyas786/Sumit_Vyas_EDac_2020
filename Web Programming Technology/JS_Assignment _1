@@ -1,0 +1,21 @@
+<!-- 5.Using the forEach function defined for an array, find the sum of the array of numbers. [function add_all(arr) {...}] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_5</title>
+</head>
+<body>
+    <script>
+        var arr=[1,2,3,4];
+        var sum=0;
+        for(var i in arr)
+        {
+            sum=sum+arr[i];
+        }   
+        document.write("arr[1+2+3+4] = "+sum);
+       </script> 
+</body>
+</html>
