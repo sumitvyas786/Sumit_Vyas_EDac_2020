@@ -1,0 +1,23 @@
+<!-- 4.Write a javascript function named is_integer which checks if the passed argument is an integer.
+    You can use any mathematical operator or functions defined in the Math object. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_4</title>
+</head>
+<body>
+    <script>
+        function is_integer(x)
+        {
+           if(isNaN(x))
+               document.write(x+" is not an Integer");
+           else
+               document.write(x+" is an Integer");
+        }   
+       is_integer(10);
+    </script> 
+</body>
+</html>
