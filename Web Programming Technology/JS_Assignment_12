@@ -1,0 +1,63 @@
+<!-- 4)Write a Javascript program to sort elements of an array using sorting algorithm. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_12</title>
+</head>
+<body>
+    <script>
+//============== String Sorting ===============
+
+        var intArray = [4,7,2,8,5,9,6,1,0,3];
+        function sortIntArray(arr1)
+        {
+            var temp=0;
+            var i;
+            var j;
+            for(i=0 ; i<(arr1.length)-1 ; i++)
+            {
+                for(j=i+1 ; j<arr1.length ; j++)
+                {
+                    if(arr1[i] > arr1[j])
+                    {
+                        temp = arr1[i];
+                        arr1[i] = arr1[j];
+                        arr1[j] = temp;
+                    }
+                }
+            }
+            return arr1;
+        }
+        document.write("Sorting of Integer Array [4,7,2,8,5,9,6,1,0,3] = ["+sortIntArray(intArray)+"]");
+
+
+
+//============== String Sorting ===============
+
+        var strArray = ["P","S","D","F","W","Q"];
+        function sortStrArray(arr2)
+        {
+            var temp=0;
+            var i;
+            var j;
+            for(i=0 ; i<(arr2.length)-1 ; i++)
+            {
+                for(j=i+1 ; j<arr2.length ; j++)
+                {
+                    if(arr2[i] > arr2[j])
+                    {
+                        temp = arr2[i];
+                        arr2[i] = arr2[j];
+                        arr2[j] = temp;
+                    }
+                }
+            }
+            return arr2;
+        }
+        document.write('<br><br> Sorting of String Array [P,S,D,F,W,Q] = ['+sortStrArray(strArray)+"]");
+    </script>
+</body>
+</html>
