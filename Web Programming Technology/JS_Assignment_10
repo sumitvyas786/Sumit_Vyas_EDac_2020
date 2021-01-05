@@ -1,0 +1,30 @@
+<!-- 2) Write a javascript function named reverse which takes a string argument and returns the reversed string. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_10</title>
+</head>
+<body>
+    <script>
+        function strRev(str)
+        {
+            // var rev = str.split("");
+            // var temp, i, j;
+            // for(i=0, j=(rev.length)-1; i<Math.floor(rev.length/2) ; i++)
+            // {
+            //     temp = rev[i];
+            //     rev[i]=rev[j];
+            //     rev[j]=temp;
+            // }
+            // return rev.join("");
+
+            return str.split("").reverse().join("")
+        }
+
+        document.write("Reverse of SuPriyA is: "+strRev("SuPriyA"));
+    </script>
+</body>
+</html>
