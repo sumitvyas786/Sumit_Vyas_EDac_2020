@@ -9,7 +9,7 @@
 </head>
 <body>
     <script>
-//============== String Sorting ===============
+//============== Integer Sorting ===============
 
         var intArray = [4,7,2,8,5,9,6,1,0,3];
         function sortIntArray(arr1)
