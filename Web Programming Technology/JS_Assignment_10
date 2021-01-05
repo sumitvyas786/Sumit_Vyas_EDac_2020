@@ -11,20 +11,22 @@
     <script>
         function strRev(str)
         {
-            // var rev = str.split("");
-            // var temp, i, j;
-            // for(i=0, j=(rev.length)-1; i<Math.floor(rev.length/2) ; i++)
-            // {
-            //     temp = rev[i];
-            //     rev[i]=rev[j];
-            //     rev[j]=temp;
-            // }
-            // return rev.join("");
+            var rev = str.split("");
+            var temp, i, j;
+            var l=rev.length;
+            
+            for(i=0, j=l-1; i<Math.floor(l/2) ; i++, j--)
+            {
+                temp = rev[i];
+                rev[i]=rev[j];
+                rev[j]=temp;
+            }
+            return rev.join("");
 
-            return str.split("").reverse().join("")
+           // return str.split("").reverse().join("")
         }
 
-        document.write("Reverse of SuPriyA is: "+strRev("SuPriyA"));
+        document.write("Reverse of Sumit is: "+strRev("Sumit"));
     </script>
 </body>
 </html>
