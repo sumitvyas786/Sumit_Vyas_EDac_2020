@@ -1,0 +1,27 @@
+<!-- 3)Given a javascript array of objects having a radius property as shown
+    [{radius: 5}, {radius: 9}, {radius: 2}], write a comparator function to sort it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_11</title>
+</head>
+<body>
+    <script>
+        var circleArr = [
+            {radius: 5},
+            {radius: 9},
+            {radius: 2}
+        ];
+
+        circleArr.sort(function (a, b)
+            {
+                return a.radius - b.radius;
+            });
+            
+        // run the above code directly on console.
+    </script>
+</body>
+</html>
