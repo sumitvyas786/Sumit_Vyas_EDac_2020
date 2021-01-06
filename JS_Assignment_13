@@ -1,0 +1,43 @@
+<!-- 5) Write a javascript function named length_of_array, which takes an arrayas
+    argument and returns the number of elements in that array (as opposed to what
+    is given by the length property of the array). Remember undefined can also be
+    an element if it is explicitly set at some index, e.g. x[5] = undefined;.
+    This undefined should be counted, but elements which are not present in the array
+    (as arrays can be sparse), should not be counted. -->
+
+    <!-- JS Assignment 3
+    1 What is a sparse array illustrate its importance with example.
+    2 List  different keywords in javascript
+    3 Difference between == and === operators in javascript , illustrate with example
+    4 With example illustrate typeof operator
+    5 With a suitable example explain for loop in javascript
+    6 With suitable example explain date methods in javascript -->
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_13</title>
+</head>
+<body>
+    <script>
+
+        function length_of_array(arr)
+        {
+            var count = arr.filter(function (x)
+                    {
+                        if(x != "" || x != null)
+                            return true;
+                        else
+                            return false;
+                    });
+            return count.length;
+        }
+
+        var array1 = [2,,8,5,9,,6,,undefined,1,0,null,3];
+        document.write("Length of Array [2,,8,5,9,,6,,undefined,1,0,null,3] = "+length_of_array(array1));
+    </script>
+</body>
+</html>
