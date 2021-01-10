@@ -1,0 +1,53 @@
+<!-- 7. Write a jQuery program to hide all headings on a page when they are clicked.
+Also find the position of the mouse pointer relative to the left and top edges of the document. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_4.7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>H1 Heading</h1>
+    <h2>H2 Heading</h2>
+    <h1>H1 Heading</h1>
+    <h2>H2 Heading</h2>
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <script>
+//To hide all H1 Headings:
+        $(document).ready(function(){
+            $("h1").click(function(){
+                $("h1").hide();
+                $("#p1").text("H1 Heading is hidden");                
+            })
+        });
+
+//To show all Hidden H1 Headings:
+        $(document).ready(function(){
+                $("#p1").dblclick(function(){
+                    $("h1").show();
+                });
+            });
+        
+//To hide all H2 Headings:
+        $(document).ready(function(){
+            $("h2").click(function(){
+                $("h2").hide();
+                $("#p2").text("H2 Heading is hidden");
+            })
+        });
+
+//To show all Hidden H2 Headings:
+        $(document).ready(function(){
+                $("#p2").dblclick(function(){
+                    $("h2").show();
+                });
+            });
+
+    </script>
+</body>
+</html>
