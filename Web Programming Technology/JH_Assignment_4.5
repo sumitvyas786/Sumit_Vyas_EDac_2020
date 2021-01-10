@@ -1,0 +1,25 @@
+<!-- 5. You are having sample data for the link. Write jQuery code to change the hyperlink and the text of an existing link. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_4.5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+        <p><a href="http://www.google.com" id="link1">Link</a></p>
+        <button>Click Here</button>
+        <p id="p1">This link is for Google</p>
+
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#link1").attr("href","http://www.youtube.com")
+                    $("#p1").text("This link is for Youtube")
+                });
+            });
+        </script>
+</body>
+</html>
