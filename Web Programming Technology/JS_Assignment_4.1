@@ -1,0 +1,50 @@
+<!-- 1. Write a JavaScript function to get First and Last name from the previously created Resume form. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_4.1</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="#" method="get">
+                <div class="col">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" placeholder="FirstName">
+                </div>
+                <div class="col">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" placeholder="LastName">
+
+                </div>
+                <div class="col">
+                    <label for="number">Mobile</label>
+                    <input type="text" placeholder="Mobile Number" id="Number">
+                </div>
+                <div class="col">
+                    <label for="Email">Email</label>
+                    <input type="text" placeholder="Email" id="Email">
+                </div>
+                <div>
+                    <input type="submit" value="submit" onclick="myFun()">
+                </div>
+            </form>
+            <div>
+                <p id="msz" style="color: rgb(0, 255, 0);"></p>
+            </div>
+
+            <script>
+                function myFun(){
+                var fname = document.getElementById("fname").value;
+                var lname = document.getElementById("lname").value;
+                document.getElementById("msz").innerHTML = (fname+" "+lname);
+                }
+            </script>
+</body>
+
+</html>
