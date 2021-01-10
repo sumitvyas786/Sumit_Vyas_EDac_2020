@@ -1,0 +1,32 @@
+<!-- 3. Write a JavaScript function to validate whether a given value is RegEx or not. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_4.3</title>
+</head>
+<body>
+    <div>
+        <div class="col">
+           Enter Roll No (Naming Convension): <input type="text" id="fname" placeholder="FirstName">
+           <button onclick="myFun()">Check REGEX(JH)</button>
+        </div>
+        <div id="msz"></div>
+    </div>
+
+    <script>
+        function myFun()
+        {
+            var input = document.getElementById("fname").value;
+            var reg = new RegExp("JH");
+
+            if(reg.test(input))
+                document.getElementById("msz").innerHTML = "Student is from Juhu";
+            else
+                document.getElementById("msz").innerHTML = "Student is not from Juhu";
+        }
+    </script>
+</body>
+</html>
