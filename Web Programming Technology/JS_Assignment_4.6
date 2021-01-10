@@ -1,0 +1,26 @@
+<!-- 6. Write a jQuery program to attach a click and double-click events to all <p> elements. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Assignment_4.6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="p1"></p>
+    <button>Click Here (Single / Double)</button>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#p1").text("Single Click event triggered");
+            });
+            $("button").dblclick(function(){
+                $("#p1").text("Double Click event triggered");
+            });
+        });
+    </script>
+</body>
+</html>
