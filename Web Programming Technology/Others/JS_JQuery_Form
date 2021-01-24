@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    Enter value 1: <input type="text" id="input1">
+    <br><br> Enter value 2: <input type="text" id="input2">
+<br><br><button id="btn1" onclick="add()">Add me</button><span id="div1"></span>
+<br><br><button id="btn2" onclick="sub()">Subtract me</button><span id="div2"></span>
+<br><br><button id="btn3" onclick="dev()">Devide me</button><span id="div3"></span>
+<br><br><button id="btn4" on="mul()">Multiply me</button><span id="div4"></span>
+    
+
+    <script>
+        
+        function add()
+        {
+            var a = parseInt(document.getElementById("input1").value);
+            var b = parseInt(document.getElementById("input2").value);
+            // document.getElementById("div1").innerHTML = a+b;
+            console.log(a);
+            if(isNaN(a) || isNaN(b))
+            alert("Enter valid input");
+            else
+            alert(a+b)
+        }
+
+        function sub()
+        {
+            var a = parseInt(document.getElementById("input1").value);
+            var b = parseInt(document.getElementById("input2").value);
+            // document.getElementById("div2").innerHTML = a-b;
+            if(isNaN(a) || isNaN(b))
+            alert("Enter valid input");
+            else
+            alert(a+b)
+        }
+
+        function dev()
+        {
+            var a = parseInt(document.getElementById("input1").value);
+            var b = parseInt(document.getElementById("input2").value);
+            document.getElementById("div3").innerHTML = a/b;
+        }
+
+        function mul()
+        {
+            var a = parseInt(document.getElementById("input1").value);
+            var b = parseInt(document.getElementById("input2").value); 
+            document.getElementById("div4").innerHTML = a*b;
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    Enter value 1: <input type="text" id="input1">
+    <br><br> Enter value 2: <input type="text" id="input2">
+    <br><br><button id="btn1">Add me</button><span id="div1"></span>
+    <br><br><button id="btn2">Subtract me</button><span id="div2"></span>
+    <br><br><button id="btn3">Devide me</button><span id="div3"></span>
+    <br><br><button id="btn4">Multiply me</button><span id="div4"></span>
+    
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                var a = parseInt($('#input1').val());
+                var b = parseInt($('#input2').val());
+                if(isNaN(a) || isNaN(b))
+                    $('#div1').text("Enter valid input");
+                else
+                    $('#div1').text(a+b);
+            })
+
+            $('#btn2').click(function(){
+                var a = parseInt($('#input1').val());
+                var b = parseInt($('#input2').val());
+                if(isNaN(a) || isNaN(b))
+                    $('#div2').text("Enter valid input");
+                else
+                    $('#div2').text(a-b);
+            })
+
+            $('#btn3').click(function(){
+                var a = parseInt($('#input1').val());
+                var b = parseInt($('#input2').val());
+                if(isNaN(a) || isNaN(b))
+                    $('#div3').text("Enter valid input");
+                else
+                    $('#div3').text(a/b);
+            })
+
+            $('#btn4').click(function(){
+                var a = parseInt($('#input1').val());
+                var b = parseInt($('#input2').val());
+                if(isNaN(a) || isNaN(b))
+                    $('#div4').text("Enter valid input");
+                else
+                    $('#div4').text(a*b);
+            })
+        })
+    </script>
+
+</body>
+</html>
