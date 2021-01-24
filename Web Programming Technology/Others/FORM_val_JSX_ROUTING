@@ -1,0 +1,117 @@
+import logo from './logo.svg';
+import './App.css';
+import { useState } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
+function App() {
+  return (
+    <Router>
+
+      <Link to='/page1'>Page1</Link> | {" "}
+      <Link to='/page2'>Page2</Link> | {" "}
+      <Link to='/'>Home</Link> | {" "}
+      <Link to='/login'>Login</Link>
+
+      <Route exact path="/" component={Home} />
+      <Route exact path="/page1" component={Page1} />
+      <Route exact path="/page2" component={Page2} />
+      <Route exact path="/login" component={Login} />
+
+    </Router>
+  );
+}
+
+
+
+
+
+
+
+
+function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loginStatus, setloginStatus] = useState("");
+
+  const updateInput = (e) => setUsername(e.target.value);
+  const updateInputPassword = (e) => setPassword(e.target.value);
+
+  const updateloginforms = (e) => setloginStatus("Successful");
+  const updateloginformf = (e) => setloginStatus("Failed... !!!");
+  
+  const processLogin = () => {
+    if (username == "vaibhav" && password == "vaibhav") {
+      updateloginforms();
+    } else {
+      updateloginformf();
+    }
+  };
+
+
+  return (
+    <h1>
+      <label>User Name :</label>
+      <input
+        type="text"
+        value={username}
+        onChange={updateInput}
+        name="username"
+        placeholder="Username"
+      />
+
+      <br /><br />
+      <label>Password    :</label>
+      <input
+        type="password"
+        value={password}
+        onChange={updateInputPassword}
+        name="username"
+        placeholder="Password"
+      />
+      <br />
+      <button onClick={processLogin}>Login</button>
+
+      <br></br>
+
+      <div>User Login  :: {loginStatus}</div>
+
+    </h1>
+  );
+}
+
+
+
+
+
+
+
+
+function Home() {
+  return (
+    <h1>
+      HOMEPAGE
+    </h1>
+  );
+}
+
+function Page1() {
+  return (
+    <h1>
+      Page1
+    </h1>
+  );
+}
+
+function Page2() {
+  return (
+    <h1>
+      Page2
+    </h1>
+  );
+}
+
+
+
+
+
+export default App;
