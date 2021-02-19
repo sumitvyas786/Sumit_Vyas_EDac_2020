@@ -29,15 +29,16 @@
 
 
 </form>
-			<c:forEach items="${userList}" var="item">
+<c:forEach items="${userList}" var="item">
+	
 	${item.id} &nbsp; ${item.username} &nbsp; ${item.password}
 	
-  <form method="get" action="user-delete${item.id}">
+  	<form method="get" action="user-delete${item.id}">
 	    <input type="submit" value="Delete">
 	</form>
 				
         <br>
-			</c:forEach>
+</c:forEach>
 		
 	</div>
 </body>
