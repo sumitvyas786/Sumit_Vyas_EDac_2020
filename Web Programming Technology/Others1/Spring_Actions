@@ -1,0 +1,66 @@
+package com.edac;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+
+
+@Controller
+@RequestMapping("/crud")
+public class UserAction {
+	
+	@Autowired
+	UserRepo userRepo;
+	
+	@GetMapping("/register")
+	public ModelAndView register()
+	{
+		ModelAndView mv = new ModelAndView("Register");
+		return mv;
+	}
+	
+	
+	
+	
+	@PostMapping("/create-user")
+	public String CreateUser(User007 user)
+	{
+		userRepo.save(user);
+		
+		return "redirect:/crud/register";
+	}
+	
+	
+	
+	
+	
+	
+	@GetMapping("/user-read")
+	public ModelAndView userRead()
+	{
+		ModelAndView mv = new ModelAndView("Register");
+		List<User007> user = userRepo.findAll();
+		mv.addObject("userList",user);
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	@DeleteMapping("/user-delete")
+	public ModelAndView userDelete(User007 user)
+	{
+		userRepo.delete(user);
+		ModelAndView mv = new ModelAndView("Register");
+		return mv;
+	}
+}
