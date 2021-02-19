@@ -1,0 +1,20 @@
+<script>
+	var fname = /^[a-zA-Z]/;
+	var pass = /^[a-zA-Z]/;
+		
+	$(document).ready(function(){
+			$("#uname").on('input',function(){
+				var name1 = $("#uname").val();
+				var name2 = fname.test(name1);
+				
+				if(name2)
+				{
+					$("#level1").css("display","none")
+				}
+				else
+				{
+					$("#level1").css("display","block")
+				}
+			})
+		});
+	</script>
