@@ -20,6 +20,10 @@ public class UserAction {
 	@Autowired
 	UserRepo userRepo;
 	
+	
+	
+//	Main Page
+	
 	@GetMapping("/register")
 	public ModelAndView register()
 	{
@@ -28,20 +32,19 @@ public class UserAction {
 	}
 	
 	
-	
+//	Create User
 	
 	@PostMapping("/create-user")
 	public String CreateUser(User007 user)
 	{
 		userRepo.save(user);
 		
-		return "redirect:/crud/register";
+		return "redirect:/crud/user-read";
 	}
 	
 	
 	
-	
-	
+//	Read all
 	
 	@GetMapping("/user-read")
 	public ModelAndView userRead()
@@ -54,15 +57,13 @@ public class UserAction {
 	
 	
 	
-	
-	
+//	Delete Entry
 	
 	@GetMapping("/user-delete{id}")
-	public ModelAndView userDelete(@PathVariable String id)
+	public String userDelete(@PathVariable String id)
 	{
 		int id1 = Integer.parseInt(id);
 		userRepo.deleteById(id1);
-		ModelAndView mv = new ModelAndView("Register");
-		return mv;
+		return "redirect:/crud/user-read";
 	}
 }
