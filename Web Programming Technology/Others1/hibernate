@@ -1,0 +1,49 @@
+* UserDao:
+private static final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+
+
+1. Create user dao:
+
+public void saveUser(User user) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(user);
+		session.getTransaction().commit();
+		session.close();
+		}
+
+
+2. login dao:
+
+SearchUser()
+public boolean searchUser(User user)
+{
+	Session session = sessionFactory.openSession();
+		
+	String sql = "SELECT * FROM user WHERE username=:username AND password=:password";
+		
+	User user1 = session.createNativeQuery(sql, User.class)
+		.setParameter("username", user.getUsername())
+		.setParameter("password", user.getPassword())
+	.	getSingleResult();
+		
+	if(user1 != null)
+		return true;
+	else
+		return true;
+	}
+
+
+
+3. Session:
+Servlet:
+	HttpSession session = request.getSession();
+	session.setAttribute("userSession", "1");
+  
+JSP Page:
+	if(session.getAttribute("userSession") == null)
+  
+Servlet:
+	request.getSession().invalidate();
+
+
